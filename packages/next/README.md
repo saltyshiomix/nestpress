@@ -13,16 +13,106 @@
 ## Installation
 
 ```bash
-$ npm install --save @nestpress/next next react react-dom
+$ npm install --save @nestpress/next
 ```
 
 ## Usage
 
-First, register it in the application module so that Nest can handle dependencies:
+### Set Up
+
+First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
+
+#### package.json
+
+```json
+{
+  "name": "sample-app",
+  "scripts": {
+    "dev": "ts-node -p tsconfig.server.json server/main.ts",
+    "build": "next build && tsc -p tsconfig.server.json",
+    "start": "cross-env NODE_ENV=production node .next/production-server/main.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.6.7",
+    "@nestjs/core": "^6.6.7",
+    "@nestpress/next": "latest",
+    "next": "^9.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "cross-env": "^5.2.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.3"
+  }
+}
+```
+
+#### tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
+
+#### tsconfig.server.json
+
+```json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmit": false,
+    "outDir": ".next/production-server"
+  },
+  "include": [
+    "server"
+  ]
+}
+```
+
+### Implementation
+
+#### server/main.ts
+
+Register `NextModule` in your application module so that the Nest can handle dependencies:
 
 ```ts
-// app.module.ts
-
 import {
   Module,
   NestModule,
@@ -33,11 +123,15 @@ import {
   NextModule,
   NextMiddleware,
 } from '@nestpress/next';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
     // register NextModule
     NextModule,
+  ],
+  controllers: [
+    AppController,
   ],
 })
 export class AppModule implements NestModule {
@@ -61,11 +155,11 @@ export class AppModule implements NestModule {
 }
 ```
 
-Next, prepare the Next.js service in the main entry point:
+#### server/app.module.ts
+
+Prepare the Next.js service in the main entry point:
 
 ```ts
-// main.ts
-
 import { NestFactory } from '@nestjs/core';
 import { NextModule } from '@nestpress/next';
 import { AppModule } from './app.module';
@@ -83,31 +177,11 @@ async function bootstrap() {
 bootstrap();
 ```
 
-Finally, use `NextService` in your controllers like this:
+#### server/app.controller.ts
 
-**home.module.ts**
-
-```ts
-// home.module.ts
-
-import { Module } from '@nestjs/common';
-import { NextModule } from '@nestpress/next';
-import { HomeController } from './home.controller';
-
-@Module({
-  imports: [
-    NextModule,
-  ],
-  controllers: [
-    HomeController,
-  ],
-})
-export class HomeModule {}
-```
+Use `NextService` in your controllers like this:
 
 ```ts
-// home.controller.ts
-
 import {
   IncomingMessage,
   ServerResponse,
@@ -134,12 +208,27 @@ export class HomeController {
 }
 ```
 
-```tsx
-// pages/index.tsx
+#### pages/index.tsx
 
+In the `pages` directory, we can do the same as the Next.js way:
+
+```tsx
 export default () => (
   <p>Next.js on top of NestJS!</p>
 );
 ```
 
+### Development Mode
+
+```bash
+$ yarn dev (or `npm run dev`)
+```
+
 Go to `http://localhost:3000` and you'll see `Next.js on top of NestJS!`.
+
+### Production Mode
+
+```bash
+$ yarn build (or `npm run build`)
+$ yarn start (or `npm start`)
+```
