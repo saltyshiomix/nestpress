@@ -28,7 +28,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc --project tsconfig.build.json",
+    "build": "rimraf dist && tsc",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
