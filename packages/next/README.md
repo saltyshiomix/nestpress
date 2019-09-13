@@ -218,6 +218,43 @@ export default () => (
 );
 ```
 
+### Options
+
+```ts
+import { NestFactory } from '@nestjs/core';
+import { NextModule } from '@nestpress/next';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  app.get(NextModule).prepare({
+    /**
+     * Whether to launch Next.js in dev mode
+     */
+    dev: process.env.NODE_ENV !== 'production',
+    /**
+     * Where the Next project is located
+     */
+    dir: process.cwd(),
+    /**
+     * Hide error messages containing server information
+     */
+    quiet: false,
+    /**
+     * Object what you would use in next.config.js
+     */
+    conf: {},
+  }).then(() => {
+    app.listen(3000, '0.0.0.0', () => {
+      console.log('> Ready on http://localhost:3000 with Next.js!');
+    });
+  });
+}
+
+bootstrap();
+```
+
 ### Development Mode
 
 ```bash
