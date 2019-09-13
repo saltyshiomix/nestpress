@@ -1,0 +1,52 @@
+{
+  "name": "@nestpress/next",
+  "version": "0.0.0",
+  "description": "The Next.js integration module for NestJS",
+  "repository": "git@github.com:saltyshiomix/nestpress.git",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/saltyshiomix/nestpress/tree/master/packages/next/README.md",
+  "keywords": [
+    "next",
+    "nextjs",
+    "next.js",
+    "nest",
+    "nestjs",
+    "nest.js",
+    "react",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/saltyshiomix/nestpress/issues",
+    "email": "shiono.yoshihide@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc --project tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^6.6.7",
+    "@types/node": "^12.7.5",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "next": "^9.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.0",
+    "rxjs": "^6.5.3",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.3"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6",
+    "next": "^9"
+  }
+}
