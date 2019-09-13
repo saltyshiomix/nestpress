@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "with-express",
+  "name": "basic",
   "scripts": {
     "dev": "ts-node --project tsconfig.server.json server/main.ts",
     "build": "next build && tsc --project tsconfig.server.json",
