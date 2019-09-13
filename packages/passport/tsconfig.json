@@ -6,7 +6,6 @@
     "sourceMap": true,
     "declaration": true,
     "removeComments": true,
-    "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "outDir": "dist"
