@@ -106,10 +106,12 @@ import { EnvService } from '../env/env.service';
 export class SessionModule extends PostgresExpressSessionModule {
   constructor(
     private readonly env: EnvService,
-  ) {}
+  ) {
+    super();
+  }
 
   public initialize(app: INestApplication): void {
-    super().initialize(app, {
+    super.initialize(app, {
       secret: this.env.get('SECRET'),
       username: this.env.get('DB_USERNAME'),
       password: this.env.get('DB_PASSWORD'),
