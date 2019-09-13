@@ -13,7 +13,7 @@
 ## Installation
 
 ```bash
-$ npm install --save @nestpress/passport
+$ npm install --save @nestpress/passport passport
 ```
 
 ## Usage
