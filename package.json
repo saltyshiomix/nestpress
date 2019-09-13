@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "name": "nestpress",
+  "devDependencies": {
+    "lerna": "^3.16.4"
+  }
+}
