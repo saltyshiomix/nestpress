@@ -1,7 +1,7 @@
 {
   "name": "@nestpress/postgres-express-session",
   "version": "0.3.1",
-  "description": "The PosgreSQL with Express Sessionin Module for NestJS",
+  "description": "The PosgreSQL with Express Sessionn Module for NestJS",
   "repository": "git@github.com:saltyshiomix/nestpress.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
   "license": "MIT",
