@@ -3,6 +3,10 @@ import next from 'next';
 import { ServerConstructor } from 'next-server/dist/server/next-server';
 import { NextService } from './next.service';
 
+type NextServerConstructor = Omit<ServerConstructor, 'staticMarkup'> & {
+  dev?: boolean;
+}
+
 @Module({
   providers: [
     NextService,
@@ -16,7 +20,7 @@ export class NextModule {
     private readonly next: NextService,
   ) {}
 
-  public async prepare(options?: ServerConstructor) {
+  public async prepare(options?: NextServerConstructor) {
     const app = next(Object.assign({
       dev: process.env.NODE_ENV !== 'production',
       dir: process.cwd(),
