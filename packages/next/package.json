@@ -1,6 +1,6 @@
 {
   "name": "@nestpress/next",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "The Next.js integration module for NestJS",
   "repository": "git@github.com:saltyshiomix/nestpress.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
