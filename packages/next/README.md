@@ -28,8 +28,8 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 {
   "name": "sample-app",
   "scripts": {
-    "dev": "ts-node -p tsconfig.server.json server/main.ts",
-    "build": "next build && tsc -p tsconfig.server.json",
+    "dev": "ts-node --project tsconfig.server.json server/main.ts",
+    "build": "next build && tsc --project tsconfig.server.json",
     "start": "cross-env NODE_ENV=production node .next/production-server/main.js"
   },
   "dependencies": {
