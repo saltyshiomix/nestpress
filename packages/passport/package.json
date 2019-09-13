@@ -28,13 +28,11 @@
     "build": "rimraf dist && tsc",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "passport": "^0.4.0"
-  },
   "devDependencies": {
     "@nestjs/common": "^6.6.7",
     "@types/node": "^12.7.5",
     "@types/passport": "^1.0.1",
+    "passport": "^0.4.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
@@ -42,6 +40,7 @@
     "typescript": "^3.6.3"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6"
+    "@nestjs/common": "^6",
+    "passport": "^0.4.0"
   }
 }
