@@ -1,0 +1,55 @@
+{
+  "name": "@nestpress/postgres-express-session",
+  "version": "0.3.1",
+  "description": "The PosgreSQL with Express Sessionin Module for NestJS",
+  "repository": "git@github.com:saltyshiomix/nestpress.git",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/saltyshiomix/nestpress/tree/master/packages/postgres-express-session/README.md",
+  "keywords": [
+    "postgres",
+    "postgresql",
+    "express",
+    "express-session",
+    "session",
+    "nestjs",
+    "nest.js",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/saltyshiomix/nestpress/issues",
+    "email": "shiono.yoshihide@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "connect-pg-simple": "^6.0.1",
+    "express-session": "^1.16.2"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^6.6.7",
+    "@types/express-session": "^1.15.14",
+    "@types/node": "^12.7.5",
+    "@types/passport": "^1.0.1",
+    "express-session": "^1.16.2",
+    "pg": "^7.12.1",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.0",
+    "rxjs": "^6.5.3",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.3"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6",
+    "pg": "^7"
+  }
+}
