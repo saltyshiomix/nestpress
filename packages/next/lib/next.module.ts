@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import next from 'next';
-import {  } from 'next-server';
+import { ServerConstructor } from 'next-server/dist/server/next-server';
 import { NextService } from './next.service';
 
 @Module({
@@ -16,11 +16,11 @@ export class NextModule {
     private readonly next: NextService,
   ) {}
 
-  public async prepare() {
-    const app = next({
+  public async prepare(options?: ServerConstructor) {
+    const app = next(Object.assign({
       dev: process.env.NODE_ENV !== 'production',
       dir: process.cwd(),
-    });
+    }, options || {}));
     return app.prepare().then(() => this.next.setApp(app));
   }
 }
