@@ -10,7 +10,7 @@ interface PostgresExpressSessionOptions {
   password: string;
   database: string;
   host: string;
-  port: string;
+  port: number;
   expire?: number;
 }
 

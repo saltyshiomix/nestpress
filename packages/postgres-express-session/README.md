@@ -31,7 +31,7 @@ async function bootstrap() {
   app.get(PostgresExpressSessionModule).initialize(app, {
     secret: 'awesome',
     username: 'root',
-    password: '1234',
+    password: 'a2c4',
     database: 'test',
     host: 'localhost',
     port: 5432,
@@ -117,7 +117,7 @@ export class SessionModule extends PostgresExpressSessionModule {
       password: this.env.get('DB_PASSWORD'),
       database: this.env.get('DB_DATABASE'),
       host: this.env.get('DB_HOST'),
-      port: this.env.get('DB_PORT'),
+      port: parseInt(this.env.get('DB_PORT'), 10),
       expire: parseInt(this.env.get('DB_SESSION_EXPIRE'), 10)
     });
   }
