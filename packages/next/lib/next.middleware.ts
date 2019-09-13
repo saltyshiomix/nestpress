@@ -15,8 +15,7 @@ export class NextMiddleware implements NestMiddleware {
   ) {}
 
   public use(req: IncomingMessage, res: ServerResponse) {
-    const app = this.next.getApp();
-    const handle = app.getRequestHandler();
+    const handle = this.next.getApp().getRequestHandler();
     handle(req, res);
   }
 }
