@@ -833,10 +833,10 @@
     express "4.17.1"
     multer "1.4.2"
 
-"@nestpress/next@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@nestpress/next/-/next-0.1.0.tgz#63b13e482c6bac22decc7006b91f29f4e32a2e9c"
-  integrity sha512-EYp5qCxLnq6Uk4kVTMJgnUnGcm1OE9b6xJbW1NrRVRcmc2LiN6fucxoJCialID5Im7fSPARXf2wAqIxAzeT2Kw==
+"@nestpress/next@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@nestpress/next/-/next-0.2.0.tgz#7f53ec67b1852f927057e56bd5a2298c7fbec34a"
+  integrity sha512-NnsR7vcLRpKtdbAxhHHDKuUf05q0KkRwtaEM4dwZaxkC+EOmtk3pAZSxsruHMzN4WgBGAzJwT7Z9VC66gbGzRg==
 
 "@nuxtjs/opencollective@0.2.2":
   version "0.2.2"
@@ -4496,9 +4496,9 @@ regexp-tree@^0.1.13:
   integrity sha512-hwdV/GQY5F8ReLZWO+W1SRoN5YfpOKY6852+tBFcma72DKBIcHjPRIlIvQN35bCOljuAfP2G2iB0FC/w236mUw==
 
 regexpu-core@^4.5.4:
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-4.5.5.tgz#aaffe61c2af58269b3e516b61a73790376326411"
-  integrity sha512-FpI67+ky9J+cDizQUJlIlNZFKual/lUkFr1AG6zOCpwZ9cLrg8UUVakyUQJD7fCDIe9Z2nwTQJNPyonatNmDFQ==
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-4.6.0.tgz#2037c18b327cfce8a6fea2a4ec441f2432afb8b6"
+  integrity sha512-YlVaefl8P5BnFYOITTNzDvan1ulLOiXJzCNZxduTIosN17b87h3bvG9yHMoHaRuo88H4mQ06Aodj5VtYGGGiTg==
   dependencies:
     regenerate "^1.4.0"
     regenerate-unicode-properties "^8.1.0"
