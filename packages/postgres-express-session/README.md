@@ -13,7 +13,7 @@
 ## Installation
 
 ```bash
-$ npm install --save @nestpress/postgres-express-session pg
+$ npm install --save @nestpress/postgres-express-session
 ```
 
 ## Usage
