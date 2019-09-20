@@ -1,5 +1,5 @@
 <p align="center">😎 @nestpress/postgres-express-session 😎</p>
-<p align="center">The PosgreSQL with Express Sessionn Module for NestJS</p>
+<p align="center">The PosgreSQL with Express Session Module for NestJS</p>
 <p align="center">
   <a href="https://npm.im/@nestpress/postgres-express-session" alt="A version of @nestpress/postgres-express-session">
     <img src="https://img.shields.io/npm/v/@nestpress/postgres-express-session.svg">
@@ -29,9 +29,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.get(PostgresExpressSessionModule).initialize(app, {
-    secret: 'awesome',
+    secret: 'secret',
     username: 'root',
-    password: 'a2c4',
+    password: 'test',
     database: 'test',
     host: 'localhost',
     port: 5432,

@@ -33,22 +33,22 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
     "start": "cross-env NODE_ENV=production node .next/production-server/main.js"
   },
   "dependencies": {
-    "@nestjs/common": "^6.6.7",
-    "@nestjs/core": "^6.6.7",
+    "@nestjs/common": "latest",
+    "@nestjs/core": "latest",
     "@nestpress/next": "latest",
-    "next": "^9.0.5",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.5.3"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "reflect-metadata": "latest",
+    "rxjs": "latest"
   },
   "devDependencies": {
-    "@types/node": "^12.7.5",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "cross-env": "^5.2.1",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.6.3"
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "cross-env": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
   }
 }
 ```
