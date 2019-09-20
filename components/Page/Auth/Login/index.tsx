@@ -9,15 +9,12 @@ import {
   createStyles,
 } from '@material-ui/core/styles';
 import {
-  Button,
-  Card,
-  CardContent,
+  Typography,
+  Box,
   FormControl,
-  InputLabel,
-  OutlinedInput,
+  TextField,
 } from '@material-ui/core';
 import { Http } from '../../../../lib';
-import { Link } from '../../../../components';
 import { User } from '../../../../interfaces';
 
 const http = new Http();
@@ -26,21 +23,19 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       textAlign: 'center',
-      paddingTop: theme.spacing(8),
+      paddingTop: theme.spacing(28),
     },
     container: {
-      width: 480,
-      margin: `${theme.spacing(2)}px auto`,
+      maxWidth: 480,
+      margin: `0 auto`,
     },
-    card: {
-      padding: theme.spacing(4),
+    box: {
+      padding: `${theme.spacing(4)}px ${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(2)}px`,
+      borderLeft: '2px solid lime',
     },
     formControl: {
-      minWidth: 320,
-      margin: `${theme.spacing(1)}px 0`,
-    },
-    submitButton: {
-      margin: `${theme.spacing(4)}px 0`,
+      minWidth: 300,
+      marginBottom: theme.spacing(2),
     },
   }),
 );
@@ -49,14 +44,7 @@ export const Login = () => {
   const classes = useStyles({});
 
   const [email, setEmail] = useState('');
-  const [emailLabelWidth, setEmailLabelWidth] = useState(0);
   const [password, setPassword] = useState('');
-  const [passwordLabelWidth, setPasswordLabelWidth] = useState(0);
-
-  const emailLabelRef = useRef({} as HTMLLabelElement);
-  const passwordLabelRef = useRef({} as HTMLLabelElement);
-  useEffect(() => setEmailLabelWidth(emailLabelRef.current.offsetWidth));
-  useEffect(() => setPasswordLabelWidth(passwordLabelRef.current.offsetWidth));
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
@@ -89,50 +77,29 @@ export const Login = () => {
         autoComplete="off"
         noValidate
       >
-        <Card className={classes.card}>
-          <CardContent>
-            <FormControl className={classes.formControl} variant="outlined">
-              <InputLabel htmlFor="email" ref={emailLabelRef}>EMAIL</InputLabel>
-              <OutlinedInput
-                id="email"
-                name="email"
-                type="email"
-                value={email}
-                onChange={handleEmail}
-                labelWidth={emailLabelWidth}
-              />
-            </FormControl>
-            <br />
-            <FormControl className={classes.formControl} variant="outlined">
-              <InputLabel htmlFor="password" ref={passwordLabelRef}>PASSWORD</InputLabel>
-              <OutlinedInput
-                id="password"
-                name="password"
-                type="password"
-                value={password}
-                onChange={handlePassword}
-                labelWidth={passwordLabelWidth}
-              />
-            </FormControl>
-            <br />
-            <Button
-              className={classes.submitButton}
-              type="submit"
-              variant="outlined"
-              color="primary"
-              size="large"
-            >
-              LOGIN
-            </Button>
-            <br />
-            <Link
-              href="/auth/register"
-              color="secondary"
-            >
-              Create an Account
-            </Link>
-          </CardContent>
-        </Card>
+        <Box className={classes.box}>
+          <FormControl className={classes.formControl} variant="outlined">
+            <TextField
+              id="email"
+              name="email"
+              type="email"
+              label="EMAIL"
+              value={email}
+              onChange={handleEmail}
+            />
+          </FormControl>
+          <FormControl className={classes.formControl} variant="outlined">
+            <TextField
+              id="password"
+              name="password"
+              type="password"
+              label="PASSWORD"
+              value={password}
+              onChange={handlePassword}
+            />
+          </FormControl>
+          <input type="submit" style={{ display: 'none' }} />
+        </Box>
       </form>
     </div>
   );
