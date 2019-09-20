@@ -11,6 +11,7 @@
 ## Examples
 
 - [basic](https://github.com/saltyshiomix/nestpress/tree/master/examples/basic)
+- [basic-auth](https://github.com/saltyshiomix/nestpress/tree/master/examples/basic-auth)
 - [use-favicon](https://github.com/saltyshiomix/nestpress/tree/master/examples/use-favicon)
 - [with-express](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express)
 - [with-express-material-ui](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express-material-ui)

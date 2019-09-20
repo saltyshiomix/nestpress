@@ -1,4 +1,4 @@
-# How to Use
+# use-favicon
 
 ## Installation
 
