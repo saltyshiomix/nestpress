@@ -1,5 +1,5 @@
 <p align="center">😎 @nestpress 😎</p>
-<p align="center">Better NestJS Utilities</p>
+<p align="center">Better NestJS Utilities and Examples</p>
 
 ## Packages
 
