@@ -1,73 +1,21 @@
-import React from 'react';
-import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import { Http } from '../lib';
-import { Layout } from '../components';
+import {
+  Layout,
+  Home,
+} from '../components';
 
-const http = new Http();
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      textAlign: 'center',
-      paddingTop: theme.spacing(8),
-    },
-    container: {
-      width: 480,
-      margin: `${theme.spacing(2)}px auto`,
-    },
-    card: {
-      padding: theme.spacing(4),
-    },
-  }),
-);
-
-const IndexPage = ({ user }) => {
-  const classes = useStyles({});
-
-  const handleClick = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    const isLoggedOut: boolean = await http.post('api/auth/logout');
-    if (isLoggedOut) {
-      location.href = '/auth/login';
-    }
-  };
-
+const HomePage = (props) => {
   return (
     <Layout>
-      <div className={classes.root}>
-        <div className={classes.container}>
-          <Card className={classes.card}>
-            <CardContent>
-              <Typography variant="body1">
-                You are now logged in as {user.name} :)
-              </Typography>
-              <br />
-              <Button
-                type="submit"
-                variant="outlined"
-                color="primary"
-                size="large"
-                onClick={handleClick}
-              >
-                LOGOUT
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      <Home {...props} />
     </Layout>
   );
-}
+};
 
-IndexPage.getInitialProps = async ({ req }) => {
+HomePage.getInitialProps = async ({ req }) => {
   const { user } = req;
   return {
     user,
   };
 };
 
-export default IndexPage;
+export default HomePage;
