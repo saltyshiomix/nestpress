@@ -5,19 +5,10 @@ import {
   Res,
   UseGuards,
 } from '@nestjs/common';
-import {
-  RegisterGuard,
-  LoginGuard,
-} from '../../logics/auth/guards';
+import { LoginGuard } from '../../logics/auth/guards';
 
 @Controller('api/auth')
 export class ApiAuthController {
-  @Post('register')
-  @UseGuards(RegisterGuard)
-  public register(@Req() req, @Res() res) {
-    res.json(req.user);
-  }
-
   @Post('login')
   @UseGuards(LoginGuard)
   public login(@Req() req, @Res() res) {

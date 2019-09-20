@@ -12,7 +12,7 @@ import {
 export class RedirectIfNotAuthenticatedMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
     if (!req.user) {
-      return res.redirect('/auth/login');
+      return res.redirect('/admin/login');
     }
     return next();
   }
