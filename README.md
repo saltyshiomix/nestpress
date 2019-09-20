@@ -1,4 +1,4 @@
-<p align="center">😎 @nestpress 😎</p>
+<p align="center">😎 NESTPRESS 😎</p>
 <p align="center">Better NestJS Utilities and Examples</p>
 
 ## Packages
@@ -17,7 +17,65 @@
 - [with-express-material-ui](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express-material-ui)
 - [with-nodemon](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-nodemon)
 
-## Development
+## Usage of NESTPRESS
+
+### Database Setup
+
+#### For Mac Users
+
+```bash
+# install postgresql
+$ brew install postgresql
+
+# if you want to start postgresql in startup, try do this
+$ brew services start postgresql
+
+# create user "nestpressuser" with password "nestpresspass"
+$ createuser -P nestpressuser
+
+# create database "nestpressdb" owened by "nestpressuser"
+$ createdb nestpressdb -O nestpressuser
+```
+
+#### For Windows Users
+
+##### Python
+
+Because it uses [node.bcrypt.js](https://github.com/kelektiv/node.bcrypt.js), we need a Python:
+
+- Download an installer at <https://www.python.org/downloads/windows>
+- Install with "Add Python 3.X to PATH" checked
+
+##### [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools)
+
+- Run `npm install --global --production windows-build-tools` from an elevated PowerShell or CMD.exe **as Administrator**
+
+##### PostgreSQL
+
+- Download an installer at <https://www.postgresql.org/download/windows>
+- Run the installer with a flag `--install_runtimes 0` like this:
+
+```cmd
+> postgresql-11.2-1-windows-x64.exe --install_runtimes 0
+```
+
+##### pgAdmin
+
+- Download a latest installer at <https://www.pgadmin.org/download>
+- Run the pgAdmin and login with a root user
+- Right click `Login/Group Roles` and `Create > Login/Group Role`
+    - `General` Panel:
+        - `Name`: `nestpressuser`
+    - `Definition` Panel:
+        - `Password`: `nestpresspass`
+    - `Priviledges` Panel:
+        - Check all `Yes`
+- Right click `Databases` and `Create > Database`
+    - `General` Tab:
+        - `Database`: `nestpressdb`
+        - `Owner`: `nestpressuser`
+
+### Application Setup
 
 ```bash
 # install
@@ -25,10 +83,36 @@ $ git clone https://github.com/saltyshiomix/nestpress.git
 $ cd nestpress
 $ yarn
 
-# development mode
-$ yarn dev
+# prepare `.env` and edit it for your own environments
+$ cp .env.example .env
+```
 
-# production mode
-$ yarn build
-$ yarn start
+The `.env` file is like this:
+
+```
+# DB
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=nestpressuser
+DB_PASSWORD=nestpresspass
+DB_DATABASE=nestpressdb
+DB_SYNCHRONIZE=true
+
+# App
+HOST=http://localhost
+PORT=4000
+SESSION_SECRET=nestpress
+```
+
+### Development Mode
+
+```bash
+$ yarn dev (or `npm run dev`)
+```
+
+### Production Mode
+
+```bash
+$ yarn build (or `npm run build`)
+$ yarn start (or `npm start`)
 ```

@@ -13,11 +13,11 @@ import { NextService } from '@nestpress/next';
 @Controller()
 export class HomeController {
   constructor(
-    private readonly next: NextService,
+    private readonly nextService: NextService,
   ) {}
 
   @Get()
-  public async showHome(@Req() req: Request, @Res() res: Response) {
-    this.next.render('/index', req, res);
+  public showHome(@Req() req: Request, @Res() res: Response) {
+    return this.nextService.render('/index', req, res);
   }
 }
