@@ -17,7 +17,7 @@
 - [with-express-material-ui](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express-material-ui)
 - [with-nodemon](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-nodemon)
 
-## Usage of NESTPRESS
+## Usage
 
 ### Database Setup
 
