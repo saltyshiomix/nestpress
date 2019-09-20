@@ -36,7 +36,7 @@ export const Home = ({ user }) => {
     e.preventDefault();
     const isLoggedOut: boolean = await http.post('api/auth/logout');
     if (isLoggedOut) {
-      location.href = '/auth/login';
+      location.href = '/admin/login';
     }
   };
 

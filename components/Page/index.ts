@@ -1,2 +1,2 @@
-export * from './Auth/Login';
+export * from './Admin/Login';
 export * from './Home';
