@@ -12,7 +12,7 @@
     "@nestjs/platform-express": "^6.7.1",
     "@nestpress/next": "^1.0.0",
     "express": "^4.17.1",
-    "next": "^9.0.5",
+    "next": "^9.0.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "reflect-metadata": "^0.1.13",
