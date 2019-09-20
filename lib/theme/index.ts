@@ -6,13 +6,13 @@ export const theme = createMuiTheme({
       primary: '#ffffff', // white
       secondary: '#00ff00', // lime
       disabled: '#696969', // dimgray
-      hint: '#ffff00', // yellow
+      hint: '#ff00ff', // fuchsia
     },
     primary: {
-      main: '#4b0082', // indigo
+      main: '#00ff00', // lime
     },
     secondary: {
-      main: '#00ff00', // lime
+      main: '#ffff00', // yellow
     },
     error: {
       main: '#dc143c', // crimson
