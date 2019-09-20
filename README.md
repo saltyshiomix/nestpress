@@ -15,3 +15,19 @@
 - [with-express](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express)
 - [with-express-material-ui](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express-material-ui)
 - [with-nodemon](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-nodemon)
+
+## Development
+
+```bash
+# install
+$ git clone https://github.com/saltyshiomix/nestpress.git
+$ cd nestpress
+$ yarn
+
+# development mode
+$ yarn dev
+
+# production mode
+$ yarn build
+$ yarn start
+```
