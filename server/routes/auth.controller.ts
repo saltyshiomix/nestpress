@@ -12,11 +12,6 @@ export class AuthController {
     private readonly nextService: NextService,
   ) {}
 
-  @Get('register')
-  public showRegister(@Req() req, @Res() res) {
-    return this.nextService.render('/auth/register', req, res);
-  }
-
   @Get('login')
   public showLogin(@Req() req, @Res() res) {
     return this.nextService.render('/auth/login', req, res);
