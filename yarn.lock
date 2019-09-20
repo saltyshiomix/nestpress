@@ -833,10 +833,10 @@
     express "4.17.1"
     multer "1.4.2"
 
-"@nestpress/next@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@nestpress/next/-/next-0.2.0.tgz#7f53ec67b1852f927057e56bd5a2298c7fbec34a"
-  integrity sha512-NnsR7vcLRpKtdbAxhHHDKuUf05q0KkRwtaEM4dwZaxkC+EOmtk3pAZSxsruHMzN4WgBGAzJwT7Z9VC66gbGzRg==
+"@nestpress/next@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@nestpress/next/-/next-1.0.0.tgz#aef0495ea2c86aaa99d34847e8534153310aaf93"
+  integrity sha512-u0ZpnthQ5rKPZJETzVQGS1BG1aXqgHLYG3wpiz2aIULCpBZ9S6a3NAltC2OXXYCcjvpBd8yQpt4TRfbDIMj8oQ==
 
 "@nuxtjs/opencollective@0.2.2":
   version "0.2.2"
