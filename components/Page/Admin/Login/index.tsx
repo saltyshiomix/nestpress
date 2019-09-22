@@ -1,101 +1,24 @@
-import { useState } from 'react';
-import {
-  Theme,
-  makeStyles,
-  createStyles,
-} from '@material-ui/core/styles';
-import {
-  Box,
-  FormControl,
-  TextField,
-} from '@material-ui/core';
-import { Http } from '../../../../lib';
-import { User } from '../../../../interfaces';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-const http = new Http();
+import { LoginWithMobile } from './mobile';
+import { LoginWithTablet } from './tablet';
+import { LoginWithDesktop } from './desktop';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      textAlign: 'center',
-      paddingTop: theme.spacing(28),
-    },
-    container: {
-      maxWidth: 480,
-      margin: `0 auto`,
-    },
-    box: {
-      padding: `${theme.spacing(4)}px ${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(2)}px`,
-      borderLeft: '2px solid lime',
-    },
-    formControl: {
-      minWidth: 300,
-      marginBottom: theme.spacing(2),
-    },
-  }),
-);
+const Login = () => {
+  const mobile: boolean = useMediaQuery('(max-width:480px)');
+  const tablet: boolean = useMediaQuery('(min-width:481px) and (max-width: 839px)');
+  const desktop: boolean = useMediaQuery('(min-width:840px)');
 
-export const Login = () => {
-  const classes = useStyles({});
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
-  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    const data = {
-      email: e.target.email.value,
-      password: e.target.password.value,
-    }
-
-    try {
-      const user: User = await http.post('api/auth/login', data);
-      if (user) {
-        location.href = '/';
-      } else {
-        alert('Failed to login!');
-      }
-    } catch (err) {
-      alert('Failed to login!');
-    }
+  if (mobile) {
+    return <LoginWithMobile />;
   }
+  if (tablet) {
+    return <LoginWithTablet />;
+  }
+  if (desktop) {
+    return <LoginWithDesktop />;
+  }
+  return null;
+};
 
-  return (
-    <div className={classes.root}>
-      <form
-        onSubmit={handleSubmit}
-        className={classes.container}
-        autoComplete="off"
-        noValidate
-      >
-        <Box className={classes.box}>
-          <FormControl className={classes.formControl} variant="outlined">
-            <TextField
-              id="email"
-              name="email"
-              type="email"
-              label="EMAIL"
-              value={email}
-              onChange={handleEmail}
-            />
-          </FormControl>
-          <FormControl className={classes.formControl} variant="outlined">
-            <TextField
-              id="password"
-              name="password"
-              type="password"
-              label="PASSWORD"
-              value={password}
-              onChange={handlePassword}
-            />
-          </FormControl>
-          <input type="submit" style={{ display: 'none' }} />
-        </Box>
-      </form>
-    </div>
-  );
-}
+export default Login;
