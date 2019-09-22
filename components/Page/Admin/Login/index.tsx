@@ -1,5 +1,4 @@
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-
 import { LoginWithMobile } from './mobile';
 import { LoginWithTablet } from './tablet';
 import { LoginWithDesktop } from './desktop';

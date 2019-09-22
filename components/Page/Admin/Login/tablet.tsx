@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import {
+  FormEvent,
+  ChangeEvent,
+  useState,
+} from 'react';
 import {
   Theme,
   makeStyles,
@@ -41,15 +45,15 @@ export const LoginWithTablet = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
-  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
+  const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+  const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
 
-  const handleSubmit = async (e: any) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const data = {
-      email: e.target.email.value,
-      password: e.target.password.value,
+      email: e.currentTarget.email.value,
+      password: e.currentTarget.password.value,
     }
 
     try {
@@ -67,7 +71,7 @@ export const LoginWithTablet = () => {
   return (
     <div className={classes.root}>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
         className={classes.container}
         autoComplete="off"
         noValidate
@@ -80,7 +84,7 @@ export const LoginWithTablet = () => {
               type="email"
               label="EMAIL"
               value={email}
-              onChange={handleEmail}
+              onChange={onChangeEmail}
             />
           </FormControl>
           <FormControl className={classes.formControl} variant="outlined">
@@ -90,7 +94,7 @@ export const LoginWithTablet = () => {
               type="password"
               label="PASSWORD"
               value={password}
-              onChange={handlePassword}
+              onChange={onChangePassword}
             />
           </FormControl>
           <input type="submit" style={{ display: 'none' }} />
