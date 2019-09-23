@@ -12,8 +12,13 @@ export class AdminController {
     private readonly nextService: NextService,
   ) {}
 
+  @Get()
+  public showAdmin(@Req() req, @Res() res) {
+    return this.nextService.render('/admin', req, res);
+  }
+
   @Get('login')
-  public showLogin(@Req() req, @Res() res) {
+  public showAdminLogin(@Req() req, @Res() res) {
     return this.nextService.render('/admin/login', req, res);
   }
 }

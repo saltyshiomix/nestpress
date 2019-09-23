@@ -1,3 +1,3 @@
-import Login from '../../components/Page/Admin/Login';
+import { AdminLogin } from '../../components';
 
-export default Login;
+export default AdminLogin;
