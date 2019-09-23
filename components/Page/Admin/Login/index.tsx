@@ -1,23 +1,21 @@
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { LoginWithMobile } from './mobile';
-import { LoginWithTablet } from './tablet';
-import { LoginWithDesktop } from './desktop';
+import { AdminLoginWithMobile } from './mobile';
+import { AdminLoginWithTablet } from './tablet';
+import { AdminLoginWithDesktop } from './desktop';
 
-const Login = () => {
+export const AdminLogin = () => {
   const mobile: boolean = useMediaQuery('(max-width:480px)');
   const tablet: boolean = useMediaQuery('(min-width:481px) and (max-width: 839px)');
   const desktop: boolean = useMediaQuery('(min-width:840px)');
 
   if (mobile) {
-    return <LoginWithMobile />;
+    return <AdminLoginWithMobile />;
   }
   if (tablet) {
-    return <LoginWithTablet />;
+    return <AdminLoginWithTablet />;
   }
   if (desktop) {
-    return <LoginWithDesktop />;
+    return <AdminLoginWithDesktop />;
   }
   return null;
 };
-
-export default Login;

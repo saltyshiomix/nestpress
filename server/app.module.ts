@@ -65,7 +65,7 @@ export class AppModule implements NestModule {
     consumer
       .apply(RedirectIfNotAuthenticatedMiddleware)
       .forRoutes({
-        path: '',
+        path: 'admin',
         method: RequestMethod.GET,
       });
   }

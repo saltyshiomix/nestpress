@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const LoginWithMobile = () => {
+export const AdminLoginWithMobile = () => {
   const classes = useStyles({});
 
   const [email, setEmail] = useState('');
@@ -59,7 +59,7 @@ export const LoginWithMobile = () => {
     try {
       const user: User = await http.post('api/auth/login', data);
       if (user) {
-        location.href = '/';
+        location.href = '/admin';
       } else {
         alert('Failed to login!');
       }
