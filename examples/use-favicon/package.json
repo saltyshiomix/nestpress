@@ -7,8 +7,8 @@
     "start": "cross-env NODE_ENV=production node .next/production-server/main.js"
   },
   "dependencies": {
-    "@nestjs/common": "^6.7.1",
-    "@nestjs/core": "^6.7.1",
+    "@nestjs/common": "^6.7.2",
+    "@nestjs/core": "^6.7.2",
     "@nestpress/next": "latest",
     "next": "^9.0.6",
     "react": "^16.9.0",
