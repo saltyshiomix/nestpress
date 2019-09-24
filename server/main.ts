@@ -19,7 +19,7 @@ async function bootstrap() {
   app.get(NextModule).prepare().then(() => {
     // start a server
     app.listen(process.env.APP_PORT, process.env.APP_HOST, () => {
-      console.log(`[ NESTPRESS ] Ready on ${process.env.APP_HOST}:${process.env.APP_PORT}`);
+      console.log(`[ NESTPRESS ] Ready on ${process.env.APP_PROTOCOL}://${process.env.APP_HOST}:${process.env.APP_PORT}`);
     });
   });
 }
