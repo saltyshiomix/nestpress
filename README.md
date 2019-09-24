@@ -90,7 +90,6 @@ $ cp .env.example .env
 The `.env` file is like this:
 
 ```
-# DB
 DB_HOST=localhost
 DB_PORT=5432
 DB_USERNAME=nestpressuser
@@ -98,10 +97,9 @@ DB_PASSWORD=nestpresspass
 DB_DATABASE=nestpressdb
 DB_SYNCHRONIZE=true
 
-# App
-HOST=http://localhost
-PORT=4000
-SESSION_SECRET=nestpress
+APP_HOST=http://localhost
+APP_PORT=4000
+APP_SESSION_SECRET=nestpress
 ```
 
 ### Development Mode
