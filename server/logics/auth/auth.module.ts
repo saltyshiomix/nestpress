@@ -3,12 +3,14 @@ import {
   Module,
   INestApplication,
 } from '@nestjs/common';
+import { EnvModule } from '../env/env.module';
 import { UserModule } from '../user/user.module';
 import { AuthService } from './auth.service';
 import { LocalLoginStrategy } from './strategies';
 
 @Module({
   imports: [
+    EnvModule,
     UserModule,
   ],
   providers: [

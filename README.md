@@ -97,6 +97,8 @@ DB_PASSWORD=nestpresspass
 DB_DATABASE=nestpressdb
 DB_SYNCHRONIZE=true
 
+APP_ADMIN_EMAIL=test@test.com
+APP_ADMIN_PASSWORD=test
 APP_PROTOCOL=http
 APP_HOST=localhost
 APP_PORT=4000
