@@ -39,17 +39,6 @@ $ createdb nestpressdb -O nestpressuser
 
 #### For Windows Users
 
-##### Python
-
-Because it uses [node.bcrypt.js](https://github.com/kelektiv/node.bcrypt.js), we need a Python:
-
-- Download an installer at <https://www.python.org/downloads/windows>
-- Install with "Add Python 3.X to PATH" checked
-
-##### [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools)
-
-- Run `npm install --global --production windows-build-tools` from an elevated PowerShell or CMD.exe **as Administrator**
-
 ##### PostgreSQL
 
 - Download an installer at <https://www.postgresql.org/download/windows>
