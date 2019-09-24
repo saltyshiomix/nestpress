@@ -39,17 +39,6 @@ $ createdb nestpressdb -O nestpressuser
 
 #### For Windows Users
 
-##### Python
-
-Because it uses [node.bcrypt.js](https://github.com/kelektiv/node.bcrypt.js), we need a Python:
-
-- Download an installer at <https://www.python.org/downloads/windows>
-- Install with "Add Python 3.X to PATH" checked
-
-##### [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools)
-
-- Run `npm install --global --production windows-build-tools` from an elevated PowerShell or CMD.exe **as Administrator**
-
 ##### PostgreSQL
 
 - Download an installer at <https://www.postgresql.org/download/windows>
@@ -90,7 +79,6 @@ $ cp .env.example .env
 The `.env` file is like this:
 
 ```
-# DB
 DB_HOST=localhost
 DB_PORT=5432
 DB_USERNAME=nestpressuser
@@ -98,10 +86,12 @@ DB_PASSWORD=nestpresspass
 DB_DATABASE=nestpressdb
 DB_SYNCHRONIZE=true
 
-# App
-HOST=http://localhost
-PORT=4000
-SESSION_SECRET=nestpress
+APP_ADMIN_EMAIL=test@test.com
+APP_ADMIN_PASSWORD=test
+APP_PROTOCOL=http
+APP_HOST=localhost
+APP_PORT=4000
+APP_SESSION_SECRET=nestpress
 ```
 
 ### Development Mode
