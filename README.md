@@ -1,21 +1,5 @@
 <p align="center">😎 NESTPRESS 😎</p>
-<p align="center">Better NestJS Utilities and Examples</p>
-
-## Packages
-
-| package | version |
-| --- | --- |
-| [@nestpress/next](https://github.com/saltyshiomix/nestpress/blob/master/packages/next/README.md) | ![@nestpress/next](https://img.shields.io/npm/v/@nestpress/next.svg) ![downloads](https://img.shields.io/npm/dt/@nestpress/next.svg) |
-| [@nestpress/postgres-express-session](https://github.com/saltyshiomix/nestpress/blob/master/packages/postgres-express-session/README.md) | ![@nestpress/postgres-express-session](https://img.shields.io/npm/v/@nestpress/postgres-express-session.svg) ![downloads](https://img.shields.io/npm/dt/@nestpress/postgres-express-session.svg) |
-
-## Examples
-
-- [basic](https://github.com/saltyshiomix/nestpress/tree/master/examples/basic)
-- [basic-auth](https://github.com/saltyshiomix/nestpress/tree/master/examples/basic-auth)
-- [use-favicon](https://github.com/saltyshiomix/nestpress/tree/master/examples/use-favicon)
-- [with-express](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express)
-- [with-express-material-ui](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express-material-ui)
-- [with-nodemon](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-nodemon)
+<p align="center">A production ready personal blogging system on top of <a href="https://nestjs.com">NestJS</a> and <a href="https://nextjs.org">NEXT.js</a></p>
 
 ## Usage
 
@@ -106,3 +90,19 @@ $ yarn dev (or `npm run dev`)
 $ yarn build (or `npm run build`)
 $ yarn start (or `npm start`)
 ```
+
+## Packages
+
+| package | version |
+| --- | --- |
+| [@nestpress/next](https://github.com/saltyshiomix/nestpress/blob/master/packages/next/README.md) | ![@nestpress/next](https://img.shields.io/npm/v/@nestpress/next.svg) ![downloads](https://img.shields.io/npm/dt/@nestpress/next.svg) |
+| [@nestpress/postgres-express-session](https://github.com/saltyshiomix/nestpress/blob/master/packages/postgres-express-session/README.md) | ![@nestpress/postgres-express-session](https://img.shields.io/npm/v/@nestpress/postgres-express-session.svg) ![downloads](https://img.shields.io/npm/dt/@nestpress/postgres-express-session.svg) |
+
+## Fundamental Examples
+
+- [basic](https://github.com/saltyshiomix/nestpress/tree/master/examples/basic)
+- [basic-auth](https://github.com/saltyshiomix/nestpress/tree/master/examples/basic-auth)
+- [use-favicon](https://github.com/saltyshiomix/nestpress/tree/master/examples/use-favicon)
+- [with-express](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express)
+- [with-express-material-ui](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-express-material-ui)
+- [with-nodemon](https://github.com/saltyshiomix/nestpress/tree/master/examples/with-nodemon)
