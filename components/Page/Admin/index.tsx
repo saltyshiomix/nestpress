@@ -46,7 +46,7 @@ export const Admin = ({ user }) => {
         <Card className={classes.card}>
           <CardContent>
             <Typography variant="body1">
-              You are now logged in as {user.name} :)
+              You are now logged in as {user.email} :)
             </Typography>
             <br />
             <Button
