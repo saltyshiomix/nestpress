@@ -1,4 +1,4 @@
-import { PublicLayout } from '../../Layout';
+import { PublicLayout } from '../../../Layout';
 
 export const Home = () => {
   return (

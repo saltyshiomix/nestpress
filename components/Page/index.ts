@@ -1,4 +1,3 @@
-export * from './Admin';
-export * from './AdminLogin';
-
-export * from './Home';
+export * from './Admin/Home';
+export * from './Admin/Login';
+export * from './Public/Home';

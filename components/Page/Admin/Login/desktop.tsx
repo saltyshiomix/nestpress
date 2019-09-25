@@ -14,7 +14,7 @@ import {
   TextField,
   useMediaQuery,
 } from '@material-ui/core';
-import { Http } from '../../../lib';
+import { Http } from '../../../../lib';
 
 const http = new Http();
 
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     box: {
       padding: `${theme.spacing(4)}px ${theme.spacing(2)}px`,
-      borderLeft: '4px solid lime',
+      borderLeft: '2px solid lime',
     },
     formControl: {
       minWidth: 300,
@@ -39,13 +39,13 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const AdminLoginWithMobile = () => {
-  const mobile: boolean = useMediaQuery('(max-width:480px)');
+export const AdminLoginWithDesktop = () => {
+  const desktop: boolean = useMediaQuery('(min-width:840px)');
   const classes = useStyles({});
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  if (!mobile) {
+  if (!desktop) {
     return null;
   }
 
@@ -57,7 +57,7 @@ export const AdminLoginWithMobile = () => {
 
     const data = {
       email: e.currentTarget.email.value,
-      password: e.currentTarget.passord.value,
+      password: e.currentTarget.password.value,
     }
 
     try {

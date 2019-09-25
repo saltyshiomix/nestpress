@@ -9,8 +9,8 @@ import {
   CardContent,
   Typography,
 } from '@material-ui/core';
-import { AdminLayout } from '../../Layout';
-import { Http } from '../../../lib';
+import { AdminLayout } from '../../../Layout';
+import { Http } from '../../../../lib';
 
 const http = new Http();
 
