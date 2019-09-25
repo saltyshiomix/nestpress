@@ -14,7 +14,7 @@ import {
   TextField,
   useMediaQuery,
 } from '@material-ui/core';
-import { Http } from '../../../../lib';
+import { Http } from '../../../../../lib';
 
 const http = new Http();
 
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const AdminLoginWithDesktop = () => {
+export const WithDesktop = () => {
   const desktop: boolean = useMediaQuery('(min-width:840px)');
   const classes = useStyles({});
   const [email, setEmail] = useState('');

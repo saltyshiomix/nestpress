@@ -10,7 +10,7 @@ interface LayoutProps {
   children?: ReactNode,
 }
 
-export const Layout = ({ children }: LayoutProps) => {
+export const PublicLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <CssBaseline />

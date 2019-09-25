@@ -1,13 +1,16 @@
-import { AdminLoginWithMobile } from './mobile';
-import { AdminLoginWithTablet } from './tablet';
-import { AdminLoginWithDesktop } from './desktop';
+import React from 'react';
+import {
+  WithMobile,
+  WithTablet,
+  WithDesktop,
+} from './Responsive';
 
-export const AdminLogin = () => {
+export const AdminLoginPageComponent = () => {
   return (
-    <>
-      <AdminLoginWithMobile />
-      <AdminLoginWithTablet />
-      <AdminLoginWithDesktop />
-    </>
+    <React.Fragment>
+      <WithMobile />
+      <WithTablet />
+      <WithDesktop />
+    </React.Fragment>
   );
 };

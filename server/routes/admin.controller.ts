@@ -14,7 +14,10 @@ export class AdminController {
 
   @Get()
   public showAdmin(@Req() req, @Res() res) {
-    return this.nextService.render('/admin', req, res);
+    const query = {
+      user: req.user,
+    };
+    return this.nextService.renderWithData('/admin', query, req, res);
   }
 
   @Get('login')

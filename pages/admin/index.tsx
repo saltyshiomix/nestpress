@@ -1,21 +1,25 @@
-import {
-  Layout,
-  Admin,
-} from '../../components';
+import { AdminHomePageComponent } from '../../components';
+import { Http } from '../../lib';
 
-const AdminPage = (props) => {
-  return (
-    <Layout>
-      <Admin {...props} />
-    </Layout>
-  );
+const http = new Http();
+
+const AdminHomePage = (props) => {
+  return <AdminHomePageComponent {...props} />;
 };
 
-AdminPage.getInitialProps = async ({ req }) => {
-  const { user } = req;
+AdminHomePage.getInitialProps = async ({ req, query }) => {
+  const isServer = !!req;
+
+  let user;
+  if (isServer) {
+    user = query.user;
+  } else {
+    user = await http.get('api/me');
+  }
+
   return {
     user,
   };
 };
 
-export default AdminPage;
+export default AdminHomePage;

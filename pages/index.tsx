@@ -1,3 +1,7 @@
-import { Home } from '../components';
+import { HomePageComponent } from '../components';
 
-export default Home;
+const HomePage = () => {
+  return <HomePageComponent />;
+};
+
+export default HomePage;

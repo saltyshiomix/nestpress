@@ -8,6 +8,7 @@ import {
   Typography,
   useScrollTrigger,
 } from '@material-ui/core';
+import { Link } from '../../../Link';
 
 interface ElevateAppBarProps {
   children: ReactElement;
@@ -27,9 +28,18 @@ const ElevationScroll = (props: ElevateAppBarProps) => {
 export const ElevateAppBar = () => {
   return (
     <ElevationScroll>
-      <AppBar>
+      <AppBar
+        style={{
+          backgroundColor: 'lime',
+          backgroundImage: 'linear-gradient(350deg, lime 0%, #000000 68%)',
+        }}
+      >
         <Toolbar>
-          <Typography variant="h6">NESTPRESS</Typography>
+          <Link href="/admin">
+            <Typography variant="h6" color="primary">
+              NESTPRESS
+            </Typography>
+          </Link>
         </Toolbar>
       </AppBar>
     </ElevationScroll>
