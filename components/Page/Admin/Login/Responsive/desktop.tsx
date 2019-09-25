@@ -14,7 +14,7 @@ import {
   TextField,
   useMediaQuery,
 } from '@material-ui/core';
-import { Http } from '../../../../lib';
+import { Http } from '../../../../../lib';
 
 const http = new Http();
 
@@ -39,13 +39,13 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const AdminLoginWithTablet = () => {
-  const tablet: boolean = useMediaQuery('(min-width:481px) and (max-width: 839px)');
+export const AdminLoginWithDesktop = () => {
+  const desktop: boolean = useMediaQuery('(min-width:840px)');
   const classes = useStyles({});
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  if (!tablet) {
+  if (!desktop) {
     return null;
   }
 

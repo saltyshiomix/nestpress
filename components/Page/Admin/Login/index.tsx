@@ -1,6 +1,8 @@
-import { AdminLoginWithMobile } from './mobile';
-import { AdminLoginWithTablet } from './tablet';
-import { AdminLoginWithDesktop } from './desktop';
+import {
+  AdminLoginWithMobile,
+  AdminLoginWithTablet,
+  AdminLoginWithDesktop,
+} from './Responsive';
 
 export const AdminLoginPageComponent = () => {
   return (
