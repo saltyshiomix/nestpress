@@ -1,7 +1,7 @@
-import { AdminLogin } from '../../components';
+import { AdminLoginPageComponent } from '../../components';
 
 const AdminLoginPage = () => {
-  return <AdminLogin />
+  return <AdminLoginPageComponent />
 };
 
 export default AdminLoginPage;

@@ -2,7 +2,7 @@ import { AdminLoginWithMobile } from './mobile';
 import { AdminLoginWithTablet } from './tablet';
 import { AdminLoginWithDesktop } from './desktop';
 
-export const AdminLogin = () => {
+export const AdminLoginPageComponent = () => {
   return (
     <>
       <AdminLoginWithMobile />

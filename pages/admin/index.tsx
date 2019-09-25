@@ -1,14 +1,14 @@
-import { Admin } from '../../components';
+import { AdminHomePageComponent } from '../../components';
 
-const AdminIndexPage = (props) => {
-  return <Admin {...props} />;
+const AdminHomePage = (props) => {
+  return <AdminHomePageComponent {...props} />;
 };
 
-AdminIndexPage.getInitialProps = async ({ req }) => {
+AdminHomePage.getInitialProps = async ({ req }) => {
   const { user } = req;
   return {
     user,
   };
 };
 
-export default AdminIndexPage;
+export default AdminHomePage;

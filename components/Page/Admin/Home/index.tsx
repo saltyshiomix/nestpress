@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const Admin = (props) => {
+export const AdminHomePageComponent = (props) => {
   const classes = useStyles({});
 
   const onClickLogout = async (e: React.MouseEvent) => {

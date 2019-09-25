@@ -1,6 +1,6 @@
 import { PublicLayout } from '../../../Layout';
 
-export const Home = () => {
+export const HomePageComponent = () => {
   return (
     <PublicLayout>
       <p>Hello World</p>
