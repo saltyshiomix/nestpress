@@ -12,9 +12,9 @@ import {
   Box,
   FormControl,
   TextField,
+  useMediaQuery,
 } from '@material-ui/core';
 import { Http } from '../../../../lib';
-import { User } from '../../../../interfaces';
 
 const http = new Http();
 
@@ -40,10 +40,14 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const AdminLoginWithDesktop = () => {
+  const desktop: boolean = useMediaQuery('(min-width:840px)');
   const classes = useStyles({});
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  if (!desktop) {
+    return null;
+  }
 
   const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
@@ -57,8 +61,8 @@ export const AdminLoginWithDesktop = () => {
     }
 
     try {
-      const user: User = await http.post('api/auth/login', data);
-      if (user) {
+      const { email } = await http.post('api/auth/login', data);
+      if (email) {
         location.href = '/admin';
       } else {
         alert('Failed to login!');

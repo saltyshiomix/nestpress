@@ -17,11 +17,7 @@ import { ArticleModule } from './article/article.module';
 })
 export class LogicModule {
   public initialize(app: INestApplication) {
-    // enable session store in PostgreSQL
     app.get(SessionModule).initialize(app);
-
-    // enable passport session
-    // NOTE: we must use this at the end of `app.use()` list
     app.get(AuthModule).initialize(app);
   }
 }

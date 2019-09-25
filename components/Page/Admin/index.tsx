@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export const Admin = ({ user }) => {
   const classes = useStyles({});
 
-  const handleClick = async (e: React.MouseEvent) => {
+  const onClickLogout = async (e: React.MouseEvent) => {
     e.preventDefault();
     const isLoggedOut: boolean = await http.post('api/auth/logout');
     if (isLoggedOut) {
@@ -54,7 +54,7 @@ export const Admin = ({ user }) => {
               variant="outlined"
               color="primary"
               size="large"
-              onClick={handleClick}
+              onClick={onClickLogout}
             >
               LOGOUT
             </Button>
