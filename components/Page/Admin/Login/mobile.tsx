@@ -14,7 +14,6 @@ import {
   TextField,
 } from '@material-ui/core';
 import { Http } from '../../../../lib';
-import { User } from '../../../../interfaces';
 
 const http = new Http();
 
@@ -57,8 +56,8 @@ export const AdminLoginWithMobile = () => {
     }
 
     try {
-      const user: User = await http.post('api/auth/login', data);
-      if (user) {
+      const { email } = await http.post('api/auth/login', data);
+      if (email) {
         location.href = '/admin';
       } else {
         alert('Failed to login!');
