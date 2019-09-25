@@ -12,6 +12,7 @@ import {
   Box,
   FormControl,
   TextField,
+  useMediaQuery,
 } from '@material-ui/core';
 import { Http } from '../../../../lib';
 
@@ -39,10 +40,14 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const AdminLoginWithTablet = () => {
+  const tablet: boolean = useMediaQuery('(min-width:481px) and (max-width: 839px)');
   const classes = useStyles({});
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  if (!tablet) {
+    return null;
+  }
 
   const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
