@@ -26,14 +26,12 @@ const ElevationScroll = (props: ElevateAppBarProps) => {
 
 export const ElevateAppBar = () => {
   return (
-    <>
-      <ElevationScroll>
-        <AppBar>
-          <Toolbar>
-            <Typography variant="h6">NESTPRESS</Typography>
-          </Toolbar>
-        </AppBar>
-      </ElevationScroll>
-    </>
+    <ElevationScroll>
+      <AppBar>
+        <Toolbar>
+          <Typography variant="h6">NESTPRESS</Typography>
+        </Toolbar>
+      </AppBar>
+    </ElevationScroll>
   );
 };
