@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   WithMobile,
   WithTablet,
@@ -6,10 +7,10 @@ import {
 
 export const AdminLoginPageComponent = () => {
   return (
-    <>
+    <React.Fragment>
       <WithMobile />
       <WithTablet />
       <WithDesktop />
-    </>
+    </React.Fragment>
   );
 };
