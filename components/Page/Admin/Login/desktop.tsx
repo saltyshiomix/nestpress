@@ -97,7 +97,7 @@ export const AdminLoginWithDesktop = () => {
               onChange={onChangePassword}
             />
           </FormControl>
-          <input type="submit" style={{ display: 'none' }} />
+          <input type="submit" value="SUBMIT" style={{ display: 'none' }} />
         </Box>
       </form>
     </div>
