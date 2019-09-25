@@ -1,14 +1,7 @@
-import {
-  Layout,
-  Admin,
-} from '../../components';
+import { Admin } from '../../components';
 
 const AdminIndexPage = (props) => {
-  return (
-    <Layout>
-      <Admin {...props} />
-    </Layout>
-  );
+  return <Admin {...props} />;
 };
 
 AdminIndexPage.getInitialProps = async ({ req }) => {

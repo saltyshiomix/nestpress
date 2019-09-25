@@ -29,7 +29,12 @@ export const ElevateAppBar = () => {
     <ElevationScroll>
       <AppBar>
         <Toolbar>
-          <Typography variant="h6">NESTPRESS</Typography>
+          <Typography
+            variant="h6"
+            color="textPrimary"
+          >
+            NESTPRESS
+          </Typography>
         </Toolbar>
       </AppBar>
     </ElevationScroll>

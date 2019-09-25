@@ -9,6 +9,7 @@ import {
   CardContent,
   Typography,
 } from '@material-ui/core';
+import { AdminLayout } from '../../Layout';
 import { Http } from '../../../lib';
 
 const http = new Http();
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const Admin = ({ user }) => {
+export const Admin = (props) => {
   const classes = useStyles({});
 
   const onClickLogout = async (e: React.MouseEvent) => {
@@ -41,26 +42,28 @@ export const Admin = ({ user }) => {
   };
 
   return (
-    <div className={classes.root}>
-      <div className={classes.container}>
-        <Card className={classes.card}>
-          <CardContent>
-            <Typography variant="body1">
-              You are now logged in as {user.email} :)
-            </Typography>
-            <br />
-            <Button
-              type="submit"
-              variant="outlined"
-              color="primary"
-              size="large"
-              onClick={onClickLogout}
-            >
-              LOGOUT
-            </Button>
-          </CardContent>
-        </Card>
+    <AdminLayout>
+      <div className={classes.root}>
+        <div className={classes.container}>
+          <Card className={classes.card}>
+            <CardContent>
+              <Typography variant="body1">
+                You are now logged in as {props.user.email} :)
+              </Typography>
+              <br />
+              <Button
+                type="submit"
+                variant="outlined"
+                color="primary"
+                size="large"
+                onClick={onClickLogout}
+              >
+                LOGOUT
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </div>
+    </AdminLayout>
   );
 };

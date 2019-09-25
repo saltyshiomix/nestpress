@@ -1,1 +1,9 @@
-export const Home = () => <p>Hello World</p>;
+import { PublicLayout } from '../../Layout';
+
+export const Home = () => {
+  return (
+    <PublicLayout>
+      <p>Hello World</p>
+    </PublicLayout>
+  );
+};
