@@ -1,3 +1,7 @@
 import { AdminLogin } from '../../components';
 
-export default AdminLogin;
+const AdminLoginPage = () => {
+  return <AdminLogin />
+};
+
+export default AdminLoginPage;
