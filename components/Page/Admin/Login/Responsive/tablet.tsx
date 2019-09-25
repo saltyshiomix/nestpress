@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const AdminLoginWithTablet = () => {
+export const WithTablet = () => {
   const tablet: boolean = useMediaQuery('(min-width:481px) and (max-width: 839px)');
   const classes = useStyles({});
   const [email, setEmail] = useState('');

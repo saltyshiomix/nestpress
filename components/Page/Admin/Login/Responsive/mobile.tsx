@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const AdminLoginWithMobile = () => {
+export const WithMobile = () => {
   const mobile: boolean = useMediaQuery('(max-width:480px)');
   const classes = useStyles({});
   const [email, setEmail] = useState('');

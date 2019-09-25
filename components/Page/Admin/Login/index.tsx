@@ -1,15 +1,15 @@
 import {
-  AdminLoginWithMobile,
-  AdminLoginWithTablet,
-  AdminLoginWithDesktop,
+  WithMobile,
+  WithTablet,
+  WithDesktop,
 } from './Responsive';
 
 export const AdminLoginPageComponent = () => {
   return (
     <>
-      <AdminLoginWithMobile />
-      <AdminLoginWithTablet />
-      <AdminLoginWithDesktop />
+      <WithMobile />
+      <WithTablet />
+      <WithDesktop />
     </>
   );
 };

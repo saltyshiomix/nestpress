@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const AdminLoginWithDesktop = () => {
+export const WithDesktop = () => {
   const desktop: boolean = useMediaQuery('(min-width:840px)');
   const classes = useStyles({});
   const [email, setEmail] = useState('');
