@@ -1,8 +1,8 @@
 import {
   Controller,
+  Get,
   Req,
   Res,
-  Get,
 } from '@nestjs/common';
 
 @Controller('api/me')
