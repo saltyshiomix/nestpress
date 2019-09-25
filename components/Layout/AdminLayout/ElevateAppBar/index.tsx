@@ -27,7 +27,12 @@ const ElevationScroll = (props: ElevateAppBarProps) => {
 export const ElevateAppBar = () => {
   return (
     <ElevationScroll>
-      <AppBar>
+      <AppBar
+        style={{
+          backgroundColor: 'lime',
+          backgroundImage: 'linear-gradient(350deg, lime 0%, #000000 68%)',
+        }}
+      >
         <Toolbar>
           <Typography
             variant="h6"
