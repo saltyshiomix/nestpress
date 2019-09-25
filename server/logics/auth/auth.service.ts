@@ -8,6 +8,7 @@ export class AuthService {
   ) {}
 
   public async validateUser(email: string, password: string): Promise<any> {
+    // tslint:disable-next-line: possible-timing-attack
     if (email !== this.env.get('APP_ADMIN_EMAIL') || password !== this.env.get('APP_ADMIN_PASSWORD')) {
       return null;
     }
