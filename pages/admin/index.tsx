@@ -3,7 +3,7 @@ import {
   Admin,
 } from '../../components';
 
-const HomePage = (props) => {
+const AdminPage = (props) => {
   return (
     <Layout>
       <Admin {...props} />
@@ -11,11 +11,11 @@ const HomePage = (props) => {
   );
 };
 
-HomePage.getInitialProps = async ({ req }) => {
+AdminPage.getInitialProps = async ({ req }) => {
   const { user } = req;
   return {
     user,
   };
 };
 
-export default HomePage;
+export default AdminPage;
