@@ -1,42 +1,29 @@
 import {
-  Button,
-  Card,
-  CardContent,
+  Theme,
+  makeStyles,
+  createStyles,
+} from '@material-ui/core/styles';
+import {
   Typography,
 } from '@material-ui/core';
 import { AdminLayout } from '../../../Layout';
-import { Http } from '../../../../lib';
 
-const http = new Http();
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {},
+  }),
+);
 
 export const AdminHomePageComponent = (props) => {
-  const onClickLogout = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    const isLoggedOut: boolean = await http.post('api/auth/logout');
-    if (isLoggedOut) {
-      location.href = '/admin/login';
-    }
-  };
+  const classes = useStyles({});
 
   return (
     <AdminLayout>
-      <Card>
-        <CardContent>
-          <Typography variant="body1">
-            You are now logged in as {props.user.email} :)
-          </Typography>
-          <br />
-          <Button
-            type="submit"
-            variant="outlined"
-            color="primary"
-            size="large"
-            onClick={onClickLogout}
-          >
-            LOGOUT
-          </Button>
-        </CardContent>
-      </Card>
+      <div className={classes.root}>
+        <Typography variant="body1">
+          You are now logged in as {props.user.email} :)
+        </Typography>
+      </div>
     </AdminLayout>
   );
 };

@@ -5,11 +5,15 @@ import {
 } from '@material-ui/core/styles';
 import {
   Typography,
+  Button,
   AppBar as MuiAppBar,
   Toolbar,
 } from '@material-ui/core';
 import { ElevationScroll } from '../../ElevationScroll';
 import { Link } from '../../..';
+import { Http } from '../../../../lib';
+
+const http = new Http();
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,11 +31,23 @@ const useStyles = makeStyles((theme: Theme) =>
         textShadow: '2.4px 2.4px 0 #000',
       },
     },
+    logout: {
+      position: 'absolute',
+      right: theme.spacing(4),
+    },
   }),
 );
 
 export const AppBar = () => {
   const classes = useStyles({});
+
+  const onClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    const isLoggedOut: boolean = await http.post('api/auth/logout');
+    if (isLoggedOut) {
+      location.href = '/admin/login';
+    }
+  };
 
   return (
     <ElevationScroll>
@@ -49,6 +65,13 @@ export const AppBar = () => {
               NESTPRESS
             </Typography>
           </Link>
+          <Button
+            className={classes.logout}
+            color="primary"
+            onClick={onClick}
+          >
+            LOGOUT
+          </Button>
         </Toolbar>
       </MuiAppBar>
     </ElevationScroll>
