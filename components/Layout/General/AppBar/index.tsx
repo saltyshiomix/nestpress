@@ -14,17 +14,15 @@ import { Link } from '../../..';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: 'rgba(0,0,0,.2)',
-      backgroundImage: 'linear-gradient(357.5deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.24) 100%)',
+      backgroundColor: 'rgba(255,255,255,.05)',
+      backdropFilter: 'contrast(1) blur(2px)',
     },
     title: {
-      color: '#eee',
-      background: 'linear-gradient(0deg, #333 0%, #eee 48%)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
+      color: '#d8d8d8',
+      textShadow: '2.4px 2.4px 0 #000',
       '&:hover': {
-        WebkitTextFillColor: '#eee',
-        textShadow: '2.4px 2.4px 0 #000',
+        color: '#fff',
+        textShadow: '3px 3px 0 #000',
       },
     },
   }),

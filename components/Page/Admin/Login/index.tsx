@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     formControl: {
       width: 'calc(100% - (100% * (100 / 84) * .16))',
-      maxWidth: '',
       marginTop: theme.spacing(1.2),
       marginBottom: theme.spacing(2.4),
     },
