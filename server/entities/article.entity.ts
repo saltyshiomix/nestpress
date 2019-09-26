@@ -16,6 +16,9 @@ export class Article {
   @Column('varchar')
   title: string;
 
+  @Column('varchar')
+  description: string;
+
   @Column('text')
   body: string;
 
