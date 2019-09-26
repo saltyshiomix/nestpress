@@ -12,13 +12,13 @@ interface LayoutProps {
 
 export const PublicLayout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <React.Fragment>
       <CssBaseline />
       <ElevateAppBar />
       <Toolbar />
       <Container>
         {children}
       </Container>
-    </>
+    </React.Fragment>
   );
 };

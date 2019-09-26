@@ -3,13 +3,13 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  useMediaQuery,
 } from '@material-ui/core';
 import { ElevationScroll } from '../ElevationScroll';
 import { Link } from '../../../../Link';
+import { useMediaQueryDesktop } from '../../../../../lib';
 
 export const WithDesktop = () => {
-  const desktop: boolean = useMediaQuery('(min-width:840px)');
+  const desktop: boolean = useMediaQueryDesktop();
 
   if (!desktop) {
     return null;

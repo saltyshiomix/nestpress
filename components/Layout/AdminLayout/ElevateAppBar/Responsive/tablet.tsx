@@ -3,13 +3,13 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  useMediaQuery,
 } from '@material-ui/core';
 import { ElevationScroll } from '../ElevationScroll';
 import { Link } from '../../../../Link';
+import { useMediaQueryTablet } from '../../../../../lib';
 
 export const WithTablet = () => {
-  const tablet: boolean = useMediaQuery('(min-width:481px) and (max-width: 839px)');
+  const tablet: boolean = useMediaQueryTablet();
 
   if (!tablet) {
     return null;

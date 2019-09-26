@@ -3,13 +3,13 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  useMediaQuery,
 } from '@material-ui/core';
 import { ElevationScroll } from '../ElevationScroll';
 import { Link } from '../../../../Link';
+import { useMediaQueryMobile } from '../../../../../lib';
 
 export const WithMobile = () => {
-  const mobile: boolean = useMediaQuery('(max-width:480px)');
+  const mobile: boolean = useMediaQueryMobile();
 
   if (!mobile) {
     return null;
