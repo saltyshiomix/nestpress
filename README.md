@@ -2,9 +2,6 @@
   <img src="https://i.imgur.com/7gGlKJ2.png">
 </p>
 <p align="center">
-  NESTPRESS
-</p>
-<p align="center">
   The Production Ready Personal Blogging System on top of <a href="https://nestjs.com">NestJS</a> and <a href="https://nextjs.org">NEXT.js</a>
 </p>
 
