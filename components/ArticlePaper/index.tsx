@@ -18,6 +18,14 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: 'rgba(255,255,255,.12)',
       backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.12) 100%)',
     },
+    title: {
+      marginBottom: theme.spacing(.8),
+      color: '#d8d8d8',
+      textShadow: '1.5px 2px 0 #000',
+    },
+    description: {
+      color: theme.palette.text.primary,
+    },
   }),
 );
 
@@ -29,11 +37,18 @@ export const ArticlePaper = (props) => {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Typography variant="h5" component="h2">
-          This is a sheet of paper.
+        <Typography
+          className={classes.title}
+          variant="h5"
+          component="h2"
+        >
+          {article.title}
         </Typography>
-        <Typography component="p">
-          Paper can be used to build surface or other elements for your application.
+        <Typography
+          className={classes.description}
+          component="p"
+        >
+          {article.description}
         </Typography>
       </Paper>
     </div>
