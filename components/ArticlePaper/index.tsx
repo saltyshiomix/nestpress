@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       marginBottom: theme.spacing(.8),
       color: '#d8d8d8',
-      textShadow: '1.5px 2px 0 #111',
+      textShadow: '1px 1.5px 0 #111',
     },
     description: {
       color: theme.palette.text.primary,
