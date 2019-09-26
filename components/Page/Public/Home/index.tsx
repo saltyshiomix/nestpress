@@ -1,4 +1,7 @@
-import { PublicLayout } from '../../../Layout';
+import {
+  PublicLayout,
+  ArticlePaper,
+} from '../../..';
 
 export const HomePageComponent = (props) => {
   // const { articles } = props;
@@ -9,9 +12,11 @@ export const HomePageComponent = (props) => {
 
   return (
     <PublicLayout>
-      <p>Hello World</p>
       {articles.map((article, i) => (
-        <p key={i}>{article.title}</p>
+        <ArticlePaper
+          key={i}
+          {...{ article }}
+        />
       ))}
     </PublicLayout>
   );
