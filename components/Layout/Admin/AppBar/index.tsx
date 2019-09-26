@@ -18,8 +18,8 @@ export const AppBar = () => {
       >
         <Toolbar>
           <Link
-            href="/"
-            as="/"
+            href="/admin"
+            as="/admin"
           >
             <Typography
               variant="h6"
