@@ -17,6 +17,11 @@ export class Article {
   @Column('text')
   body: string;
 
+  @Column('timestamptz', {
+    nullable: true,
+  })
+  publishedAt!: Date;
+
   @CreateDateColumn()
   createdAt: Date;
 
