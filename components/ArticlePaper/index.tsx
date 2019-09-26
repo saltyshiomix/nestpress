@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     paper: {
       padding: theme.spacing(4),
-      backgroundColor: 'rgba(255,255,255,.15)',
-      backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 8%, rgba(255,255,255,.15) 100%)',
+      backgroundColor: 'rgba(255,255,255,.12)',
+      backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.12) 100%)',
     },
   }),
 );
