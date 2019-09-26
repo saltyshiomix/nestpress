@@ -14,7 +14,7 @@ AdminHomePage.getInitialProps = async ({ req, query }) => {
   if (isServer) {
     user = query.user;
   } else {
-    user = await http.get('api/me');
+    user = await http.get('api/admin/me');
   }
 
   return {
