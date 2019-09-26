@@ -13,7 +13,8 @@ import { AppBar } from './AppBar';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      minHeight: '100vh',
+      height: '100vh',
+      overflow: 'scroll',
       padding: theme.spacing(4, 2),
       backgroundColor: '#000',
       backgroundImage: 'linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(60deg, #333 25%, transparent 25.5%, transparent 75%, #333 75%, #333), linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222)',

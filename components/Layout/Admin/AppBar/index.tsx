@@ -18,8 +18,8 @@ const http = new Http();
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: 'rgba(0,0,0,.2)',
-      backgroundImage: 'linear-gradient(357.5deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.24) 100%)',
+      backgroundColor: 'rgba(255,255,255,.05)',
+      backdropFilter: 'contrast(1) blur(2px)',
     },
     title: {
       color: '#d8d8d8',

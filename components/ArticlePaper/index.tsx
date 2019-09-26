@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(4),
       backgroundColor: 'rgba(255,255,255,.12)',
       backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.12) 100%)',
+      backdropFilter: 'contrast(1) blur(2px)',
       '&:hover': {
         backgroundColor: 'rgba(255,255,255,.16)',
         backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.16) 100%)',
