@@ -9,8 +9,8 @@ import {
   Response,
 } from 'express';
 import { NextService } from '@nestpress/next';
-import { ArticleService } from '../logics/article/article.service';
-import { Article } from '../entities/article.entity';
+import { ArticleService } from '../../logics/article/article.service';
+import { Article } from '../../entities/article.entity';
 
 @Controller()
 export class HomeController {
