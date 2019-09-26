@@ -5,7 +5,7 @@ import {
   Toolbar,
 } from '@material-ui/core';
 import { ElevationScroll } from '../../ElevationScroll';
-import { Link } from '../../../Link';
+import { Link } from '../../..';
 
 export const AppBar = () => {
   return (
