@@ -19,6 +19,7 @@ export const AppBar = () => {
           <Link
             href="/admin"
             as="/admin"
+            style={{ textDecoration: 'none' }}
           >
             <Typography
               variant="h6"
