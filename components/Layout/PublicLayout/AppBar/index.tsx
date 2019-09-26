@@ -1,8 +1,8 @@
 import React from 'react';
 import {
+  Typography,
   AppBar as MuiAppBar,
   Toolbar,
-  Typography,
 } from '@material-ui/core';
 import { ElevationScroll } from '../../ElevationScroll';
 import { Link } from '../../../Link';
