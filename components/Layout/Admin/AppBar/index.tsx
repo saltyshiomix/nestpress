@@ -38,8 +38,8 @@ export const AppBar = () => {
       <MuiAppBar className={classes.root}>
         <Toolbar>
           <Link
-            href="/"
-            as="/"
+            href="/admin"
+            as="/admin"
             style={{ textDecoration: 'none' }}
           >
             <Typography
