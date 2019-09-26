@@ -5,7 +5,7 @@ import { ArticleModule } from '../logics/article/article.module';
 import { ApiAuthController } from './api/auth.controller';
 import { ApiAdminMeController } from './api/admin/me.controller';
 import { ApiArticleController } from './api/general/article.controller';
-import { AdminHomeController } from './admin/admin.controller';
+import { AdminHomeController } from './admin/home.controller';
 import { HomeController } from './general/home.controller';
 
 @Module({
