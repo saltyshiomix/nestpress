@@ -1,11 +1,7 @@
 import React from 'react';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
-interface ElevateAppBarProps {
-  children: React.ReactElement;
-}
-
-export const ElevationScroll = (props: ElevateAppBarProps) => {
+export const ElevationScroll = (props) => {
   const { children } = props;
   const trigger = useScrollTrigger({
     disableHysteresis: true,

@@ -5,10 +5,10 @@ import {
   Res,
   UseGuards,
 } from '@nestjs/common';
-import { LoginGuard } from '../../logics/auth/guards';
+import { LoginGuard } from '../../../logics/auth/guards';
 
 @Controller('api/auth')
-export class ApiAuthController {
+export class ApiAdminAuthController {
   @Post('login')
   @UseGuards(LoginGuard)
   public login(@Req() req, @Res() res) {

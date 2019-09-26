@@ -7,7 +7,7 @@ import {
 import { NextService } from '@nestpress/next';
 
 @Controller('admin')
-export class AdminController {
+export class AdminHomeController {
   constructor(
     private readonly nextService: NextService,
   ) {}

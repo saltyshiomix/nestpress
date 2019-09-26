@@ -51,6 +51,7 @@ const LinkComponent = (props: LinkProps) => {
   if (naked) {
     return <NextComposed className={className} ref={innerRef} {...other} />;
   }
+
   return <MuiLink component={NextComposed} className={className} ref={innerRef} {...other} />;
 }
 
