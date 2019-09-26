@@ -1,16 +1,16 @@
 import React from 'react';
 import {
-  AppBar,
+  AppBar as MuiAppBar,
   Toolbar,
   Typography,
 } from '@material-ui/core';
 import { ElevationScroll } from '../../ElevationScroll';
 import { Link } from '../../../Link';
 
-export const ElevateAppBar = () => {
+export const AppBar = () => {
   return (
     <ElevationScroll>
-      <AppBar
+      <MuiAppBar
         style={{
           backgroundColor: 'rgba(0,0,0,.2)',
           backgroundImage: 'linear-gradient(357.5deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.24) 100%)',
@@ -31,7 +31,7 @@ export const ElevateAppBar = () => {
             </Typography>
           </Link>
         </Toolbar>
-      </AppBar>
+      </MuiAppBar>
     </ElevationScroll>
   );
 };

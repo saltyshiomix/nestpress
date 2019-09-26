@@ -8,7 +8,7 @@ import {
   Toolbar,
   Container,
 } from '@material-ui/core';
-import { ElevateAppBar } from './ElevateAppBar';
+import { AppBar } from './AppBar';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -31,7 +31,7 @@ export const PublicLayout = (props) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <ElevateAppBar />
+      <AppBar />
       <Toolbar />
       <Container>
         {children}
