@@ -6,7 +6,7 @@ import {
 import {
   Typography,
 } from '@material-ui/core';
-import { AdminLayout } from '../../../Layout';
+import { AdminLayout } from '../../..';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
