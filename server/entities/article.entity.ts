@@ -4,7 +4,9 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
+import { View } from './view.entity';
 
 @Entity()
 export class Article {
@@ -27,4 +29,11 @@ export class Article {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  // @ManyToMany(type => Tag, tag => tag.articles)
+  // @JoinTable()
+  // tags!: Tag[];
+
+  @OneToMany(type => View, view => view.article)
+  views!: View[];
 }
