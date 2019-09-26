@@ -6,7 +6,9 @@ import {
 import {
   Typography,
   Paper,
+  Fade,
 } from '@material-ui/core';
+import { Link } from '..';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,6 +19,10 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(4),
       backgroundColor: 'rgba(255,255,255,.12)',
       backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.12) 100%)',
+      '&:hover': {
+        backgroundColor: 'rgba(255,255,255,.16)',
+        backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.16) 100%)',
+      },
     },
     title: {
       marginBottom: theme.spacing(.8),
@@ -35,22 +41,29 @@ export const ArticlePaper = (props) => {
   const { article } = props;
 
   return (
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Typography
-          className={classes.title}
-          variant="h5"
-          component="h2"
+    <Fade in={true}>
+      <div className={classes.root}>
+        <Link
+          href={`/articles/${article.id}`}
+          style={{ textDecoration: 'none' }}
         >
-          {article.title}
-        </Typography>
-        <Typography
-          className={classes.description}
-          component="p"
-        >
-          {article.description}
-        </Typography>
-      </Paper>
-    </div>
+          <Paper className={classes.paper}>
+            <Typography
+              className={classes.title}
+              variant="h5"
+              component="h2"
+            >
+              {article.title}
+            </Typography>
+            <Typography
+              className={classes.description}
+              component="p"
+            >
+              {article.description}
+            </Typography>
+          </Paper>
+        </Link>
+      </div>
+    </Fade>
   );
 };
