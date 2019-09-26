@@ -4,6 +4,7 @@
   "scripts": {
     "test": "run-p lint",
     "lint": "tslint --project tsconfig.json",
+    "predev": "rimraf .next",
     "dev": "nodemon server/main.ts",
     "prebuild": "rimraf .next",
     "build": "run-p lint build:server build:client",
