@@ -45,6 +45,7 @@ export const ArticlePaper = (props) => {
       <div className={classes.root}>
         <Link
           href={`/articles/${article.id}`}
+          as={`/articles/${article.id}`}
           style={{ textDecoration: 'none' }}
         >
           <Paper className={classes.paper}>

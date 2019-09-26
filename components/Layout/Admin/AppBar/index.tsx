@@ -17,7 +17,10 @@ export const AppBar = () => {
         }}
       >
         <Toolbar>
-          <Link href="/">
+          <Link
+            href="/"
+            as="/"
+          >
             <Typography
               variant="h6"
               style={{
