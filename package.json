@@ -22,8 +22,6 @@
     "@nestpress/next": "^1.0.0",
     "@nestpress/postgres-express-session": "^1.0.0",
     "@zeit/next-css": "^1.0.1",
-    "class-transformer": "^0.2.3",
-    "class-validator": "^0.10.0",
     "compression": "^1.7.4",
     "dotenv": "^8.1.0",
     "fontfaceobserver": "^2.1.0",
