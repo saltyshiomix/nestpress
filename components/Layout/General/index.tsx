@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const PublicLayout = (props) => {
+export const GeneralLayout = (props) => {
   const classes = useStyles({});
 
   const { children } = props;

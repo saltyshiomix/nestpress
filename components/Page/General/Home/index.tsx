@@ -1,5 +1,5 @@
 import {
-  PublicLayout,
+  GeneralLayout,
   ArticlePaper,
 } from '../../..';
 
@@ -19,13 +19,13 @@ export const HomePageComponent = (props) => {
   ];
 
   return (
-    <PublicLayout>
+    <GeneralLayout>
       {articles.map((article, i) => (
         <ArticlePaper
           key={i}
           {...{ article }}
         />
       ))}
-    </PublicLayout>
+    </GeneralLayout>
   );
 };
