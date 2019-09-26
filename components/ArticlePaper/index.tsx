@@ -17,12 +17,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     paper: {
       padding: theme.spacing(4),
-      backgroundColor: 'rgba(255,255,255,.12)',
-      backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.12) 100%)',
+      color: '#d8d8d8',
+      textShadow: '1px 1.5px 0 #111',
+      backgroundColor: 'transparent',
+      backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,.1) 36%, rgba(255,255,255,.2) 100%)',
       backdropFilter: 'contrast(1) blur(2px)',
       '&:hover': {
-        backgroundColor: 'rgba(255,255,255,.16)',
-        backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.16) 100%)',
+        color: '#fff',
+        backgroundImage: 'linear-gradient(357.5deg, rgba(255,255,255,.12) 36%, rgba(255,255,255,.24) 100%)',
       },
     },
     title: {
