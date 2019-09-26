@@ -4,7 +4,7 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import { ElevationScroll } from '../ElevationScroll';
+import { ElevationScroll } from '../../../ElevationScroll';
 import { Link } from '../../../../Link';
 import { useMediaQueryMobile } from '../../../../../lib';
 
