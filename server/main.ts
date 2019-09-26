@@ -10,6 +10,8 @@ async function bootstrap() {
 
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
+  app.use(require('helmet')());
+
   app.get(LogicModule).initialize(app);
 
   app.get(NextModule).prepare().then(() => {
