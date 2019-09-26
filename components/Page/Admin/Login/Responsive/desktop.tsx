@@ -1,8 +1,4 @@
-import {
-  FormEvent,
-  ChangeEvent,
-  useState,
-} from 'react';
+import React, { useState } from 'react';
 import {
   Theme,
   makeStyles,
@@ -12,9 +8,11 @@ import {
   Box,
   FormControl,
   TextField,
-  useMediaQuery,
 } from '@material-ui/core';
-import { Http } from '../../../../../lib';
+import {
+  Http,
+  useMediaQueryDesktop,
+} from '../../../../../lib';
 
 const http = new Http();
 
@@ -40,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const WithDesktop = () => {
-  const desktop: boolean = useMediaQuery('(min-width:840px)');
+  const desktop: boolean = useMediaQueryDesktop();
   const classes = useStyles({});
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -49,10 +47,10 @@ export const WithDesktop = () => {
     return null;
   }
 
-  const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
-  const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
+  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
 
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const data = {

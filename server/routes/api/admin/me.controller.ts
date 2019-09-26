@@ -5,8 +5,8 @@ import {
   Res,
 } from '@nestjs/common';
 
-@Controller('api/me')
-export class ApiMeController {
+@Controller('api/admin/me')
+export class ApiAdminMeController {
   @Get()
   public me(@Req() req, @Res() res) {
     res.json(req.user);
