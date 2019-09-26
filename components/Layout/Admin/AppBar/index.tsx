@@ -22,13 +22,11 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundImage: 'linear-gradient(357.5deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.24) 100%)',
     },
     title: {
-      color: '#eee',
-      background: 'linear-gradient(0deg, #333 0%, #eee 48%)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
+      color: '#d8d8d8',
+      textShadow: '2.4px 2.4px 0 #000',
       '&:hover': {
-        WebkitTextFillColor: '#eee',
-        textShadow: '2.4px 2.4px 0 #000',
+        color: '#fff',
+        textShadow: '3px 3px 0 #000',
       },
     },
     logout: {
