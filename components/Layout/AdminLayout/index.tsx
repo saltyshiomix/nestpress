@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React from 'react';
 import {
   CssBaseline,
   Toolbar,
@@ -7,7 +7,7 @@ import {
 import { ElevateAppBar } from './ElevateAppBar';
 
 interface LayoutProps {
-  children?: ReactNode,
+  children?: React.ReactNode,
 }
 
 export const AdminLayout = ({ children }: LayoutProps) => {
