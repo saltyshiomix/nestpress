@@ -11,8 +11,23 @@ const { augmentColor } = theme.palette;
 export const createAugmentColor = (color: string) => augmentColor({ 500: color });
 
 export const brand = {
-  primary: createAugmentColor('#00ff00'), // lime
-  secondary: createAugmentColor('#00ff00'), // yellow
-  text: createAugmentColor('#d8d8d8'), // white
-  background: createAugmentColor('#222222'), // black
+  // lime
+  primary: {
+    main: '#00ff00',
+  },
+  // yellow
+  secondary: {
+    main: '#00ff00',
+  },
+  // white
+  text: {
+    main: '#d8d8d8',
+    light: '#ffffff',
+  },
+  // black
+  background: {
+    main: '#222222',
+    light: '#333333',
+    dark: '#111111',
+  },
 };
