@@ -1,7 +1,10 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
-import { initializeFonts } from '../lib';
+import {
+  theme,
+  initializeFonts,
+} from '../lib';
 
 class MyDocument extends Document {
   componentDidMount() {
@@ -22,7 +25,14 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
           <link rel="apple-touch-icon" href="/static/icon.png" />
         </Head>
-        <body>
+        <body style={{
+          height: '100vh',
+          overflow: 'scroll',
+          backgroundColor: '#000',
+          backgroundImage: 'linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(60deg, #333 25%, transparent 25.5%, transparent 75%, #333 75%, #333), linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222)',
+          backgroundPosition: `0 0, 0 0, ${theme.spacing(21)}px ${theme.spacing(36.8)}px, ${theme.spacing(21)}px ${theme.spacing(36.8)}px, 0 0, ${theme.spacing(21)}px ${theme.spacing(36.8)}px`,
+          backgroundSize: theme.spacing(21, 36.8),
+        }}>
           <Main />
           <NextScript />
         </body>

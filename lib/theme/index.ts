@@ -2,23 +2,32 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 export const theme = createMuiTheme({
   palette: {
-    text: {
-      primary: '#dcdcdc',
-      secondary: '#00ff00', // lime
-      disabled: '#696969',
-      hint: '#ff00ff', // fuchsia
-    },
-    primary: {
-      main: '#00ff00', // lime
-    },
-    secondary: {
-      main: '#ffff00',
-    },
-    error: {
-      main: '#dc143c',
-    },
-    background: {
-      default: '#000000',
-    },
+    type: 'dark',
   },
 });
+
+const { augmentColor } = theme.palette;
+
+export const createAugmentColor = (color: string) => augmentColor({ 500: color });
+
+export const brand = {
+  // lime
+  primary: {
+    main: '#00ff00',
+  },
+  // yellow
+  secondary: {
+    main: '#00ff00',
+  },
+  // white
+  text: {
+    main: '#d8d8d8',
+    light: '#ffffff',
+  },
+  // black
+  background: {
+    main: '#222222',
+    light: '#333333',
+    dark: '#111111',
+  },
+};
