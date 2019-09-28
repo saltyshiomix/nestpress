@@ -19,7 +19,6 @@
     "forceConsistentCasingInFileNames": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "incremental": true,
     "plugins": [
       {
         "name": "typescript-tslint-plugin"
