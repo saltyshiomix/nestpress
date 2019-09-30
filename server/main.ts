@@ -24,6 +24,7 @@ async function bootstrap() {
         const url = await ngrok.connect({
           proto: process.env.APP_PROTOCOL,
           addr: process.env.APP_PORT,
+          auth: 'Nest:presS'
         });
         console.log(`[ NESTPRESS ] Ready on ${url.replace('https', 'http')} (GLOBAL)`);
         console.log(`[ NESTPRESS ] Ready on ${url} (GLOBAL)`);
