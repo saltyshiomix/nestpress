@@ -16,8 +16,18 @@ async function bootstrap() {
   app.get(LogicModule).initialize(app);
 
   app.get(NextModule).prepare().then(() => {
-    app.listen(process.env.APP_PORT, process.env.APP_HOST, () => {
+    app.listen(process.env.APP_PORT, process.env.APP_HOST, async () => {
       console.log(`[ NESTPRESS ] Ready on ${process.env.APP_PROTOCOL}://${process.env.APP_HOST}:${process.env.APP_PORT}`);
+
+      if (process.env.NODE_ENV !== 'production') {
+        const ngrok = require('ngrok');
+        const url = await ngrok.connect({
+          proto: process.env.APP_PROTOCOL,
+          addr: process.env.APP_PORT,
+        });
+        console.log(`[ NESTPRESS ] Ready on ${url.replace('https', 'http')} (GLOBAL)`);
+        console.log(`[ NESTPRESS ] Ready on ${url} (GLOBAL)`);
+      }
     });
   });
 }
