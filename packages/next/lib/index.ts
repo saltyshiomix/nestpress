@@ -1,9 +1,3 @@
-import { NextModule } from './next.module';
-import { NextService } from './next.service';
-import { NextMiddleware } from './next.middleware';
-
-export {
-  NextModule,
-  NextService,
-  NextMiddleware,
-};
+export * from './next.module';
+export * from './next.service';
+export * from './next.middleware';
