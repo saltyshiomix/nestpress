@@ -7,7 +7,7 @@ import {
   Brackets,
   ObjectLiteral,
 } from 'typeorm';
-import { Article } from '../../entities/article.entity';
+import { Article } from '../../../entities/article.entity';
 import { CreateArticleDto } from './dto/create-article.dto';
 
 @Injectable()
