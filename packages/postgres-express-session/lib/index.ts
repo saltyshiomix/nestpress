@@ -1,7 +1,2 @@
-import { PostgresExpressSession } from './postgres-express-session.entity';
-import { PostgresExpressSessionModule } from './postgres-express-session.module';
-
-export {
-  PostgresExpressSession,
-  PostgresExpressSessionModule,
-};
+export * from './postgres-express-session.entity';
+export * from './postgres-express-session.module';

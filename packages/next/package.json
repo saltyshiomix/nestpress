@@ -32,21 +32,20 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@nestjs/common": "^6.6.7",
-    "@types/node": "^12.7.5",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "next": "^9.0.5",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "@nestjs/common": "^6.8.0",
+    "@types/node": "^12.7.8",
+    "@types/react": "^16.9.4",
+    "@types/react-dom": "^16.9.1",
+    "next": "^9.0.7",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
-    "ts-node": "^8.3.0",
     "typescript": "^3.6.3"
   },
   "peerDependencies": {
     "@nestjs/common": "^6",
-    "next": "^9"
+    "next": "^9.0.7"
   }
 }

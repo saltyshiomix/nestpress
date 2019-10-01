@@ -1,5 +1,5 @@
-<p align="center">😎 @nestpress/next 😎</p>
-<p align="center">The Next.js integration module for NestJS</p>
+<p align="center">@nestpress/next</p>
+<p align="center">The Next.js Integration Module for NestJS</p>
 <p align="center">
   <a href="https://npm.im/@nestpress/next" alt="A version of @nestpress/next">
     <img src="https://img.shields.io/npm/v/@nestpress/next.svg">
@@ -18,11 +18,9 @@ $ npm install --save @nestpress/next
 
 ## Usage
 
-### Set Up
-
 First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 
-#### package.json
+### package.json
 
 ```json
 {
@@ -53,7 +51,7 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 }
 ```
 
-#### tsconfig.json
+### tsconfig.json
 
 ```json
 {
@@ -90,7 +88,7 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 }
 ```
 
-#### tsconfig.server.json
+### tsconfig.server.json
 
 ```json
 {
@@ -106,9 +104,7 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 }
 ```
 
-### Implementation
-
-#### server/main.ts
+### server/main.ts
 
 Register `NextModule` in your application module so that the Nest can handle dependencies:
 
@@ -155,7 +151,7 @@ export class AppModule implements NestModule {
 }
 ```
 
-#### server/app.module.ts
+### server/app.module.ts
 
 Prepare the Next.js service in the main entry point:
 
@@ -168,7 +164,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.get(NextModule).prepare().then(() => {
-    app.listen(3000, '0.0.0.0', () => {
+    app.listen(3000, 'localhost', () => {
       console.log('> Ready on http://localhost:3000 with Next.js!');
     });
   });
@@ -177,7 +173,7 @@ async function bootstrap() {
 bootstrap();
 ```
 
-#### server/app.controller.ts
+### server/app.controller.ts
 
 Use `NextService` in your controllers like this:
 
@@ -195,7 +191,7 @@ import {
 import { NextService } from '@nestpress/next';
 
 @Controller()
-export class HomeController {
+export class AppController {
   constructor(
     private readonly next: NextService,
   ) {}
@@ -203,12 +199,12 @@ export class HomeController {
   @Get()
   public async showHome(@Req() req: IncomingMessage, @Res() res: ServerResponse) {
     // this will render `pages/index.tsx`!
-    this.next.render('/index', req, res);
+    await this.next.render('/index', req, res);
   }
 }
 ```
 
-#### pages/index.tsx
+### pages/index.tsx
 
 In the `pages` directory, we can do the same as the Next.js way:
 
@@ -218,7 +214,22 @@ export default () => (
 );
 ```
 
-### Options
+### Development Mode
+
+```bash
+$ yarn dev (or `npm run dev`)
+```
+
+Go to `http://localhost:3000` and you'll see `Next.js on top of NestJS!`.
+
+### Production Mode
+
+```bash
+$ yarn build (or `npm run build`)
+$ yarn start (or `npm start`)
+```
+
+## Options
 
 ```ts
 import { NestFactory } from '@nestjs/core';
@@ -246,7 +257,7 @@ async function bootstrap() {
      */
     conf: {},
   }).then(() => {
-    app.listen(3000, '0.0.0.0', () => {
+    app.listen(3000, 'localhost', () => {
       console.log('> Ready on http://localhost:3000 with Next.js!');
     });
   });
@@ -255,17 +266,63 @@ async function bootstrap() {
 bootstrap();
 ```
 
-### Development Mode
+## Advanced Usage: Pass the Server Data to the NEXT.js client
 
-```bash
-$ yarn dev (or `npm run dev`)
+### server/app.controller.ts
+
+```ts
+@Controller()
+export class AppController {
+  constructor(
+    private readonly next: NextService,
+    private readonly articleService: ArticleService,
+  ) {}
+
+  @Get()
+  public async showHome(@Req() req: IncomingMessage, @Res() res: ServerResponse) {
+    const articles = await this.articleService.findAll();
+    const data = { articles };
+    await this.next.renderWithData('/index', data, req, res);
+  }
+}
 ```
 
-Go to `http://localhost:3000` and you'll see `Next.js on top of NestJS!`.
+### pages/index.tsx
 
-### Production Mode
+```ts
+import fetch from 'isomorphic-unfetch';
 
-```bash
-$ yarn build (or `npm run build`)
-$ yarn start (or `npm start`)
+const HomePage = (props) => {
+  const { articles } = props;
+
+  return (
+    <ul>
+      {articles.map((article, index) => (
+        <li key={index}>{article.title}</li>
+      ))}
+    </ul>
+  );
+};
+
+// we must define `getInitialProps` so that the NEXT.js can generate static markups
+HomePage.getInitialProps = async ({ req, query }) => {
+  const isServer: boolean = !!req;
+
+  let articles;
+  if (isServer) {
+    // in the NEXT.js server side, we can pass the server data
+    // this `query.articles` is passed from AppController
+    articles = query.articles;
+  } else {
+    // in the NEXT.js client side, we need to fetch the same data above
+    const response = await fetch('http://localhost:3000/api/articles');
+    articles = await response.json();
+  }
+
+  return {
+    articles,
+  };
+};
+
+export default HomePage;
 ```

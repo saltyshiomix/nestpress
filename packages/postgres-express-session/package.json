@@ -36,7 +36,7 @@
     "express-session": "^1.16.2"
   },
   "devDependencies": {
-    "@nestjs/common": "^6.6.7",
+    "@nestjs/common": "^6.8.0",
     "@types/express-session": "^1.15.14",
     "@types/node": "^12.7.5",
     "@types/passport": "^1.0.1",
@@ -45,7 +45,6 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
-    "ts-node": "^8.3.0",
     "typeorm": "^0.2.19",
     "typescript": "^3.6.3"
   },
