@@ -32,7 +32,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@nestjs/common": "^6.6.7",
+    "@nestjs/common": "^6.8.0",
     "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
