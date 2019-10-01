@@ -1,9 +1,3 @@
-import { ApiAuthMiddleware } from './api-auth.middleware';
-import { RedirectIfAuthenticatedMiddleware } from './redirect-if-authenticated.middleware';
-import { RedirectIfNotAuthenticatedMiddleware } from './redirect-if-not-authenticated.middleware';
-
-export {
-  ApiAuthMiddleware,
-  RedirectIfAuthenticatedMiddleware,
-  RedirectIfNotAuthenticatedMiddleware,
-};
+export * from './api-auth.middleware';
+export * from './redirect-if-authenticated.middleware';
+export * from './redirect-if-not-authenticated.middleware';

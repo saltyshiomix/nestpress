@@ -1,5 +1,1 @@
-import { LocalLoginStrategy } from './local-login.strategy';
-
-export {
-  LocalLoginStrategy,
-};
+export * from './local-login.strategy';

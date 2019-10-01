@@ -1,5 +1,1 @@
-import { LoginGuard } from './login.guard';
-
-export {
-  LoginGuard,
-};
+export * from './login.guard';
