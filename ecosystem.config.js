@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: 'NESTPRESS',
-    script: '.next/production-server/main.js',
+    script: '.next/nestpress/server/main.js',
     instances: 1,
     autorestart: true,
     watch: false,
