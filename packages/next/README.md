@@ -191,7 +191,7 @@ import {
 import { NextService } from '@nestpress/next';
 
 @Controller()
-export class HomeController {
+export class AppController {
   constructor(
     private readonly next: NextService,
   ) {}
@@ -264,4 +264,65 @@ async function bootstrap() {
 }
 
 bootstrap();
+```
+
+## Advanced Usage: Pass the Server Data to the NEXT.js client
+
+### server/app.controller.ts
+
+```ts
+@Controller()
+export class AppController {
+  constructor(
+    private readonly next: NextService,
+    private readonly articleService: ArticleService,
+  ) {}
+
+  @Get()
+  public async showHome(@Req() req: IncomingMessage, @Res() res: ServerResponse) {
+    const articles = await this.articleService.findAll();
+    const data = { articles };
+    await this.next.renderWithData('/index', data, req, res);
+  }
+}
+```
+
+### pages/index.tsx
+
+```ts
+import fetch from 'isomorphic-unfetch';
+
+const HomePage = (props) => {
+  const { articles } = props;
+
+  return (
+    <ul>
+      {articles.map((article, index) => (
+        <li key={index}>{article.title}</li>
+      ))}
+    </ul>
+  );
+};
+
+// we must define `getInitialProps` so that the NEXT.js can generate static markups
+HomePage.getInitialProps = async ({ req, query }) => {
+  const isServer: boolean = !!req;
+
+  let articles;
+  if (isServer) {
+    // in the NEXT.js server side, we can pass the server data
+    // this `query.articles` is passed from AppController
+    articles = query.articles;
+  } else {
+    // in the NEXT.js client side, we need to fetch the same data above
+    const response = await fetch('http://localhost:3000/api/articles');
+    articles = await response.json();
+  }
+
+  return {
+    articles,
+  };
+};
+
+export default HomePage;
 ```
