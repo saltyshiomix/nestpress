@@ -15,11 +15,11 @@ export class NextService {
     return this.app;
   }
 
-  public render(page: string, req: IncomingMessage, res: ServerResponse): void {
-    this.app.render(req, res, page);
+  public async render(page: string, req: IncomingMessage, res: ServerResponse): Promise<void> {
+    await this.app.render(req, res, page);
   }
 
-  public renderWithData(page: string, data: any, req: IncomingMessage, res: ServerResponse): void {
-    this.app.render(req, res, page, data);
+  public async renderWithData(page: string, data: any, req: IncomingMessage, res: ServerResponse): Promise<void> {
+    await this.app.render(req, res, page, data);
   }
 }
