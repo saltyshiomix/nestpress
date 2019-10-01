@@ -5,7 +5,7 @@ import {
   Res,
 } from '@nestjs/common';
 import { ArticleService } from '../../../logics/article/article.service';
-import { Article } from '../../../entities/article.entity';
+import { Article } from '../../../../entities/article.entity';
 
 @Controller('api/articles')
 export class ApiArticleController {
