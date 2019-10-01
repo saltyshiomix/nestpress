@@ -6,10 +6,6 @@ export const theme = createMuiTheme({
   },
 });
 
-const { augmentColor } = theme.palette;
-
-export const createAugmentColor = (color: string) => augmentColor({ 500: color });
-
 export const brand = {
   primary: {
     main: '#00ff00',
