@@ -18,11 +18,9 @@ $ npm install --save @nestpress/next
 
 ## Usage
 
-### Set Up
-
 First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 
-#### package.json
+### package.json
 
 ```json
 {
@@ -53,7 +51,7 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 }
 ```
 
-#### tsconfig.json
+### tsconfig.json
 
 ```json
 {
@@ -90,7 +88,7 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 }
 ```
 
-#### tsconfig.server.json
+### tsconfig.server.json
 
 ```json
 {
@@ -106,9 +104,7 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 }
 ```
 
-### Implementation
-
-#### server/main.ts
+### server/main.ts
 
 Register `NextModule` in your application module so that the Nest can handle dependencies:
 
@@ -155,7 +151,7 @@ export class AppModule implements NestModule {
 }
 ```
 
-#### server/app.module.ts
+### server/app.module.ts
 
 Prepare the Next.js service in the main entry point:
 
@@ -168,7 +164,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.get(NextModule).prepare().then(() => {
-    app.listen(3000, '0.0.0.0', () => {
+    app.listen(3000, 'localhost', () => {
       console.log('> Ready on http://localhost:3000 with Next.js!');
     });
   });
@@ -177,7 +173,7 @@ async function bootstrap() {
 bootstrap();
 ```
 
-#### server/app.controller.ts
+### server/app.controller.ts
 
 Use `NextService` in your controllers like this:
 
@@ -203,12 +199,12 @@ export class HomeController {
   @Get()
   public async showHome(@Req() req: IncomingMessage, @Res() res: ServerResponse) {
     // this will render `pages/index.tsx`!
-    this.next.render('/index', req, res);
+    await this.next.render('/index', req, res);
   }
 }
 ```
 
-#### pages/index.tsx
+### pages/index.tsx
 
 In the `pages` directory, we can do the same as the Next.js way:
 
@@ -218,7 +214,22 @@ export default () => (
 );
 ```
 
-### Options
+### Development Mode
+
+```bash
+$ yarn dev (or `npm run dev`)
+```
+
+Go to `http://localhost:3000` and you'll see `Next.js on top of NestJS!`.
+
+### Production Mode
+
+```bash
+$ yarn build (or `npm run build`)
+$ yarn start (or `npm start`)
+```
+
+## Options
 
 ```ts
 import { NestFactory } from '@nestjs/core';
@@ -246,26 +257,11 @@ async function bootstrap() {
      */
     conf: {},
   }).then(() => {
-    app.listen(3000, '0.0.0.0', () => {
+    app.listen(3000, 'localhost', () => {
       console.log('> Ready on http://localhost:3000 with Next.js!');
     });
   });
 }
 
 bootstrap();
-```
-
-### Development Mode
-
-```bash
-$ yarn dev (or `npm run dev`)
-```
-
-Go to `http://localhost:3000` and you'll see `Next.js on top of NestJS!`.
-
-### Production Mode
-
-```bash
-$ yarn build (or `npm run build`)
-$ yarn start (or `npm start`)
 ```
