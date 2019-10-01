@@ -2,7 +2,7 @@ import {
   IncomingMessage,
   ServerResponse,
 } from 'http';
-import Server from 'next-server/dist/server/next-server';
+import Server from 'next/dist/next-server/server/next-server';
 
 export class NextService {
   private app!: Server;
