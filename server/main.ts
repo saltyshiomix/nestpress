@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { config } from 'dotenv';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
@@ -6,8 +7,6 @@ import { AppModule } from './app.module';
 import { LogicModule } from './logics/logic.module';
 
 async function bootstrap() {
-  config();
-
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.use(require('helmet')());
@@ -32,5 +31,7 @@ async function bootstrap() {
     });
   });
 }
+
+config({ path: join(process.cwd(), '.env') });
 
 bootstrap();
