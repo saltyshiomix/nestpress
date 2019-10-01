@@ -1,5 +1,5 @@
-<p align="center">😎 @nestpress/next 😎</p>
-<p align="center">The Next.js integration module for NestJS</p>
+<p align="center">@nestpress/next</p>
+<p align="center">The Next.js Integration Module for NestJS</p>
 <p align="center">
   <a href="https://npm.im/@nestpress/next" alt="A version of @nestpress/next">
     <img src="https://img.shields.io/npm/v/@nestpress/next.svg">

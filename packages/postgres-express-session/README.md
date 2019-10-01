@@ -1,4 +1,4 @@
-<p align="center">😎 @nestpress/postgres-express-session 😎</p>
+<p align="center">@nestpress/postgres-express-session</p>
 <p align="center">The PosgreSQL with Express Session Module for NestJS</p>
 <p align="center">
   <a href="https://npm.im/@nestpress/postgres-express-session" alt="A version of @nestpress/postgres-express-session">
