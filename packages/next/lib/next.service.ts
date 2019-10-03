@@ -15,11 +15,19 @@ export class NextService {
     return this.app;
   }
 
-  public async render(page: string, req: IncomingMessage, res: ServerResponse): Promise<void> {
-    await this.app.render(req, res, page);
+  public async render(page: string, req: IncomingMessage, res: ServerResponse): Promise<void>
+
+  public async render(page: string, data: any, req: IncomingMessage, res: ServerResponse): Promise<void>
+
+  public async render(page: string, arg2: any, arg3: any, arg4?: any): Promise<void> {
+    if (this.isIncomingMessage(arg2)) {
+      await this.app.render(arg2, arg3, page);
+    } else {
+      await this.app.render(arg3, arg4, page, arg2);
+    }
   }
 
-  public async renderWithData(page: string, data: any, req: IncomingMessage, res: ServerResponse): Promise<void> {
-    await this.app.render(req, res, page, data);
+  private isIncomingMessage(arg: any): arg is IncomingMessage {
+    return typeof (arg as IncomingMessage).httpVersion === 'string';
   }
 }
