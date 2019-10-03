@@ -282,7 +282,7 @@ export class AppController {
   public async showHome(@Req() req: IncomingMessage, @Res() res: ServerResponse) {
     const articles = await this.articleService.findAll();
     const data = { articles };
-    await this.next.renderWithData('/index', data, req, res);
+    await this.next.render('/index', data, req, res);
   }
 }
 ```
