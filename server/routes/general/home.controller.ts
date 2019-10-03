@@ -22,6 +22,6 @@ export class HomeController {
   @Get()
   public async showHome(@Req() req: Request, @Res() res: Response) {
     const articles: Article[] = await this.articleService.findAll();
-    return this.nextService.renderWithData('/index', { articles }, req, res);
+    return this.nextService.render('/index', { articles }, req, res);
   }
 }

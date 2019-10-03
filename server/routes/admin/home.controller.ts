@@ -17,7 +17,7 @@ export class AdminHomeController {
     const query = {
       user: req.user,
     };
-    return this.nextService.renderWithData('/admin', query, req, res);
+    return this.nextService.render('/admin', query, req, res);
   }
 
   @Get('login')
