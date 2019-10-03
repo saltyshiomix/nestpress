@@ -2,16 +2,15 @@ import {
   IncomingMessage,
   ServerResponse,
 } from 'http';
-import Server from 'next/dist/next-server/server/next-server';
 
 export class NextService {
-  private app!: Server;
+  private app!: any;
 
-  public setApp(app: Server): void {
+  public setApp(app: any): void {
     this.app = app;
   }
 
-  public getApp(): Server {
+  public getApp(): any {
     return this.app;
   }
 
