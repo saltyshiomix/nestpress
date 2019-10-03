@@ -46,6 +46,6 @@
   },
   "peerDependencies": {
     "@nestjs/common": "^6",
-    "next": "^9.0.7"
+    "next": "^9"
   }
 }
