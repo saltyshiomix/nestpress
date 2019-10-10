@@ -22,14 +22,7 @@ class MyDocument extends Document {
           <link rel="icon" type="image/png" href="/images/icon.png" />
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
-        <body style={{
-          height: '100vh',
-          overflow: 'scroll',
-          backgroundColor: '#000',
-          backgroundImage: 'linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(60deg, #333 25%, transparent 25.5%, transparent 75%, #333 75%, #333), linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222)',
-          backgroundPosition: `0 0, 0 0, ${theme.spacing(21)}px ${theme.spacing(36.8)}px, ${theme.spacing(21)}px ${theme.spacing(36.8)}px, 0 0, ${theme.spacing(21)}px ${theme.spacing(36.8)}px`,
-          backgroundSize: theme.spacing(21, 36.8),
-        }}>
+        <body>
           <Main />
           <NextScript />
         </body>

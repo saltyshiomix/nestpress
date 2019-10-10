@@ -8,7 +8,7 @@ import {
   Paper,
   Fade,
 } from '@material-ui/core';
-import { Link } from '..';
+import { Link } from '../Link';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

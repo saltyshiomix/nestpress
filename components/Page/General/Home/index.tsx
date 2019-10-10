@@ -1,7 +1,5 @@
-import {
-  GeneralLayout,
-  ArticlePaper,
-} from '../../..';
+import { GeneralLayout } from '../../../Layout';
+import { ArticlePaper } from '../../../ArticlePaper';
 
 export const HomePageComponent = (props) => {
   // const { articles } = props;
