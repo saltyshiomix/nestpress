@@ -140,11 +140,12 @@ export class AppModule implements NestModule {
         method: RequestMethod.GET,
       });
 
-    // handle static assets
+    // handle static assets and other views like 404
+    // NOTE: this route definition should be at the end of configure() because it is the fallback route
     consumer
       .apply(NextMiddleware)
       .forRoutes({
-        path: 'static*',
+        path: '*',
         method: RequestMethod.GET,
       });
   }
