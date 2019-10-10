@@ -104,7 +104,7 @@ First, populate `package.json`, `tsconfig.json` and `tsconfig.server.json`:
 }
 ```
 
-### server/main.ts
+### server/app.module.ts
 
 Register `NextModule` in your application module so that the Nest can handle dependencies:
 
@@ -158,28 +158,6 @@ export class AppModule implements NestModule {
 }
 ```
 
-### server/app.module.ts
-
-Prepare the Next.js service in the main entry point:
-
-```ts
-import { NestFactory } from '@nestjs/core';
-import { NextModule } from '@nestpress/next';
-import { AppModule } from './app.module';
-
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-
-  app.get(NextModule).prepare().then(() => {
-    app.listen(3000, 'localhost', () => {
-      console.log('> Ready on http://localhost:3000 with Next.js!');
-    });
-  });
-}
-
-bootstrap();
-```
-
 ### server/app.controller.ts
 
 Use `NextService` in your controllers like this:
@@ -209,6 +187,28 @@ export class AppController {
     await this.next.render('/index', req, res);
   }
 }
+```
+
+### server/main.ts
+
+Prepare the Next.js service in the main entry point:
+
+```ts
+import { NestFactory } from '@nestjs/core';
+import { NextModule } from '@nestpress/next';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  app.get(NextModule).prepare().then(() => {
+    app.listen(3000, 'localhost', () => {
+      console.log('> Ready on http://localhost:3000 with Next.js!');
+    });
+  });
+}
+
+bootstrap();
 ```
 
 ### pages/index.tsx
