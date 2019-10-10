@@ -4,6 +4,7 @@ import {
   INestApplication,
 } from '@nestjs/common';
 import { EnvModule } from '../env/env.module';
+import { EnvService } from '../env/env.service';
 import { AuthService } from './auth.service';
 import { LocalLoginStrategy } from './strategies';
 
@@ -21,10 +22,16 @@ import { LocalLoginStrategy } from './strategies';
 })
 export class AuthModule {
   constructor(
+    private readonly env: EnvService,
     private readonly authService: AuthService,
   ) {}
 
   public initialize(app: INestApplication) {
+    app.use(require('express-session')({
+      secret: this.env.get('APP_SESSION_SECRET'),
+      resave: false,
+      saveUninitialized: true,
+    }));
     app.use(passport.initialize());
     app.use(passport.session());
 

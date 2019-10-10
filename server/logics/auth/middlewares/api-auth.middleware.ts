@@ -3,15 +3,10 @@ import {
   NestMiddleware,
   UnauthorizedException,
 } from '@nestjs/common';
-import {
-  Request,
-  Response,
-  NextFunction,
-} from 'express';
 
 @Injectable()
 export class ApiAuthMiddleware implements NestMiddleware {
-  use(req: Request, res: Response, next: NextFunction) {
+  use(req, res, next) {
     if (!req.user) {
       throw new UnauthorizedException();
     }

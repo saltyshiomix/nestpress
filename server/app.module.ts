@@ -63,7 +63,14 @@ export class AppModule implements NestModule {
     consumer
       .apply(NextMiddleware)
       .forRoutes({
-        path: '*',
+        path: 'images/*',
+        method: RequestMethod.GET,
+      });
+
+    consumer
+      .apply(NextMiddleware)
+      .forRoutes({
+        path: 'favicon.ico',
         method: RequestMethod.GET,
       });
   }

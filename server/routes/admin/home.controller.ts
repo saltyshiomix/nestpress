@@ -5,23 +5,23 @@ import {
   Res,
 } from '@nestjs/common';
 import { NextService } from '@nestpress/next';
+import { ApiAdminMeController } from '../api/admin/me.controller';
 
 @Controller('admin')
 export class AdminHomeController {
   constructor(
-    private readonly nextService: NextService,
+    private readonly next: NextService,
+    private readonly api: ApiAdminMeController,
   ) {}
 
   @Get()
-  public showAdmin(@Req() req, @Res() res) {
-    const query = {
-      user: req.user,
-    };
-    return this.nextService.render('/admin', query, req, res);
+  public async showAdminPage(@Req() req, @Res() res) {
+    const data = await this.api.me(req, res);
+    await this.next.render('/admin', data, req, res);
   }
 
   @Get('login')
-  public showAdminLogin(@Req() req, @Res() res) {
-    return this.nextService.render('/admin/login', req, res);
+  public showAdminLoginPage(@Req() req, @Res() res) {
+    return this.next.render('/admin/login', req, res);
   }
 }

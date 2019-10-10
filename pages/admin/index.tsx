@@ -9,17 +9,7 @@ const AdminHomePage = (props) => {
 
 AdminHomePage.getInitialProps = async ({ req, query }) => {
   const isServer = !!req;
-
-  let user;
-  if (isServer) {
-    user = query.user;
-  } else {
-    user = await http.get('api/admin/me');
-  }
-
-  return {
-    user,
-  };
+  return isServer ? query : await http.get('api/admin/me');
 };
 
 export default AdminHomePage;

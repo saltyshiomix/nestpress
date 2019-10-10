@@ -23,6 +23,7 @@
     "@nestpress/postgres-express-session": "^1.1.0",
     "compression": "^1.7.4",
     "dotenv": "^8.1.0",
+    "express-session": "^1.16.2",
     "fontfaceobserver": "^2.1.0",
     "helmet": "^3.21.1",
     "ky": "^0.15.0",

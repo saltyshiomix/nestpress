@@ -18,9 +18,9 @@ export class LocalLoginStrategy extends Strategy {
         passwordField: 'password',
       },
       async (email: string, password: string, done: (err: any, user?: any) => void) => {
-        const user: any = await this.authService.validateUser(email, password);
+        const user = await this.authService.validateUser(email, password);
         if (!user) {
-          return done(new UnauthorizedException, null);
+          return done(new UnauthorizedException(), null);
         }
         return done(null, user);
       },

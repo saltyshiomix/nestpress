@@ -21,5 +21,8 @@ import { HomeController } from './general/home.controller';
     AdminHomeController,
     HomeController,
   ],
+  providers: [
+    ApiAdminMeController,
+  ],
 })
 export class RouteModule {}
