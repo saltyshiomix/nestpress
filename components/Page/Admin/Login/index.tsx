@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
       paddingLeft: '16%',
-      borderLeft: '2px solid lime',
+      borderLeft: '2px solid white',
     },
     formControl: {
       width: 'calc(100% - (100% * (100 / 84) * .16))',
