@@ -9,7 +9,7 @@ import {
   Toolbar,
 } from '@material-ui/core';
 import { ElevationScroll } from '../../ElevationScroll';
-import { Link } from '../../..';
+import { Link } from '../../../Link';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

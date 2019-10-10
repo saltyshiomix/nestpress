@@ -1,7 +1,44 @@
 import {
-  GeneralLayout,
-  ArticlePaper,
-} from '../../..';
+  Theme,
+  makeStyles,
+  createStyles,
+} from '@material-ui/core/styles';
+import { GeneralLayout } from '../../../Layout';
+import { ArticlePaper } from '../../../ArticlePaper';
+import {
+  useMediaQueryMobile,
+  useMediaQueryTablet,
+} from '../../../../lib';
+
+const useStyles = (props) => {
+  const mobile = useMediaQueryMobile();
+  const tablet = useMediaQueryTablet();
+
+  return makeStyles((theme: Theme) => {
+    if (mobile) {
+      return createStyles({
+        root: {
+          paddingTop: theme.spacing(2),
+        },
+      });
+    }
+
+    if (tablet) {
+      return createStyles({
+        root: {
+          paddingTop: theme.spacing(3),
+        },
+      });
+    }
+
+    return createStyles({
+      root: {
+        paddingTop: theme.spacing(4),
+        paddingBottom: theme.spacing(2),
+      },
+    });
+  })(props);
+};
 
 export const HomePageComponent = (props) => {
   // const { articles } = props;
@@ -38,14 +75,18 @@ export const HomePageComponent = (props) => {
     },
   ];
 
+  const classes = useStyles({});
+
   return (
     <GeneralLayout>
-      {articles.map((article, i) => (
-        <ArticlePaper
-          key={i}
-          {...{ article }}
-        />
-      ))}
+      <div className={classes.root}>
+        {articles.map((article, i) => (
+          <ArticlePaper
+            key={i}
+            {...{ article }}
+          />
+        ))}
+      </div>
     </GeneralLayout>
   );
 };

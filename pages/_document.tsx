@@ -17,22 +17,12 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
-          <meta name="theme-color" content="#ffffff" />
-          <link rel="manifest" href="/static/site.webmanifest" />
-          <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
-          <link rel="apple-touch-icon" href="/static/icon.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+          <link rel="apple-touch-icon" href="/images/icon.png" />
+          <link rel="icon" type="image/png" href="/images/icon.png" />
+          <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
-        <body style={{
-          height: '100vh',
-          overflow: 'scroll',
-          backgroundColor: '#000',
-          backgroundImage: 'linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(60deg, #333 25%, transparent 25.5%, transparent 75%, #333 75%, #333), linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222)',
-          backgroundPosition: `0 0, 0 0, ${theme.spacing(21)}px ${theme.spacing(36.8)}px, ${theme.spacing(21)}px ${theme.spacing(36.8)}px, 0 0, ${theme.spacing(21)}px ${theme.spacing(36.8)}px`,
-          backgroundSize: theme.spacing(21, 36.8),
-        }}>
+        <body>
           <Main />
           <NextScript />
         </body>

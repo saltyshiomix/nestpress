@@ -10,7 +10,7 @@ import {
   Toolbar,
 } from '@material-ui/core';
 import { ElevationScroll } from '../../ElevationScroll';
-import { Link } from '../../..';
+import { Link } from '../../../Link';
 import { Http } from '../../../../lib';
 
 const http = new Http();
