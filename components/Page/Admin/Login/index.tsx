@@ -16,6 +16,14 @@ const http = new Http();
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      height: '100vh',
+      overflow: 'scroll',
+      backgroundColor: '#000',
+      backgroundImage: 'linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111), linear-gradient(60deg, #333 25%, transparent 25.5%, transparent 75%, #333 75%, #333), linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222)',
+      backgroundPosition: `0 0, 0 0, ${theme.spacing(21)}px ${theme.spacing(36.8)}px, ${theme.spacing(21)}px ${theme.spacing(36.8)}px, 0 0, ${theme.spacing(21)}px ${theme.spacing(36.8)}px`,
+      backgroundSize: theme.spacing(21, 36.8),
+    },
+    wrapper: {
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -70,36 +78,38 @@ export const AdminLoginPageComponent = () => {
 
   return (
     <div className={classes.root}>
-      <form
-        onSubmit={onSubmit}
-        className={classes.container}
-        autoComplete="off"
-        noValidate
-      >
-        <Box className={classes.box}>
-          <FormControl className={classes.formControl} variant="outlined">
-            <TextField
-              id="email"
-              name="email"
-              type="email"
-              label="EMAIL"
-              value={email}
-              onChange={onChangeEmail}
-            />
-          </FormControl>
-          <FormControl className={classes.formControl} variant="outlined">
-            <TextField
-              id="password"
-              name="password"
-              type="password"
-              label="PASSWORD"
-              value={password}
-              onChange={onChangePassword}
-            />
-          </FormControl>
-          <input type="submit" value="SUBMIT" style={{ display: 'none' }} />
-        </Box>
-      </form>
+      <div className={classes.wrapper}>
+        <form
+          onSubmit={onSubmit}
+          className={classes.container}
+          autoComplete="off"
+          noValidate
+        >
+          <Box className={classes.box}>
+            <FormControl className={classes.formControl} variant="outlined">
+              <TextField
+                id="email"
+                name="email"
+                type="email"
+                label="EMAIL"
+                value={email}
+                onChange={onChangeEmail}
+              />
+            </FormControl>
+            <FormControl className={classes.formControl} variant="outlined">
+              <TextField
+                id="password"
+                name="password"
+                type="password"
+                label="PASSWORD"
+                value={password}
+                onChange={onChangePassword}
+              />
+            </FormControl>
+            <input type="submit" value="SUBMIT" style={{ display: 'none' }} />
+          </Box>
+        </form>
+      </div>
     </div>
   );
 };
