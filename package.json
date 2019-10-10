@@ -20,7 +20,6 @@
     "@nestjs/platform-express": "^6.8.2",
     "@nestjs/typeorm": "^6.2.0",
     "@nestpress/next": "^1.2.0",
-    "@nestpress/postgres-express-session": "^1.1.0",
     "compression": "^1.7.4",
     "dotenv": "^8.1.0",
     "express-session": "^1.16.2",
