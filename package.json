@@ -13,8 +13,8 @@
     "start": "cross-env NODE_ENV=production node .next/nestpress/server/main.js"
   },
   "dependencies": {
-    "@material-ui/core": "^4.5.0",
-    "@material-ui/icons": "^4.4.3",
+    "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.5.1",
     "@nestjs/common": "^6.8.3",
     "@nestjs/core": "^6.8.3",
     "@nestjs/platform-express": "^6.8.3",
@@ -58,6 +58,6 @@
     "typescript": "^3.6.4",
     "typescript-tslint-plugin": "^0.5.4",
     "url-loader": "^2.2.0",
-    "webpack": "^4.41.0"
+    "webpack": "^4.41.1"
   }
 }
