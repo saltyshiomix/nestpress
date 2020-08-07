@@ -16,7 +16,7 @@
     "@nestpress/next": "^1.0.0",
     "@nestpress/postgres-express-session": "^1.0.0",
     "bcrypt": "^3.0.6",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.10.0",
     "dotenv": "^8.1.0",
     "ky": "^0.14.0",
